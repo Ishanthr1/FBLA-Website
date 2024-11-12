@@ -14,7 +14,7 @@
     <ul>
       <li><a href="calendar.html">Events Calendar</a></li>
       <li><a href="events.html">Explore Events</a></li>
-      <li><a href="buy-tickets.html">Box Office</a></li> <!-- Updated to link to Buy Tickets page -->
+      <li><a href="buy-tickets.html">Box Office</a></li> 
       <li><a href="#info">Information</a></li>
       <li><a href="#planner">Planner</a></li>
     </ul>
@@ -25,7 +25,6 @@
   <div id="currentMonthLabel"></div>
   <div id="calendarGrid"></div>
 
-  <!-- Navigation buttons for full calendar -->
   <div class="calendar-navigation">
     <button id="prevMonthButton" class="nav-button">Previous Month</button>
     <button id="nextMonthButton" class="nav-button">Next Month</button>
@@ -51,7 +50,6 @@
 
   let currentDate = new Date();
 
-  // Function to render the calendar grid
   function renderCalendar(date) {
     calendarGrid.innerHTML = "";
     const year = date.getFullYear();
@@ -61,14 +59,12 @@
 
     currentMonthLabel.textContent = `${date.toLocaleString('default', { month: 'long' })} ${year}`;
 
-    // Create empty cells for days before the start of the month
     for (let i = 0; i < firstDay; i++) {
       const emptyCell = document.createElement("div");
       emptyCell.classList.add("calendar-day", "empty");
       calendarGrid.appendChild(emptyCell);
     }
 
-    // Create cells for each day of the current month
     for (let day = 1; day <= daysInMonth; day++) {
       const cell = document.createElement("div");
       cell.classList.add("calendar-day");
@@ -86,23 +82,19 @@
     }
   }
 
-  // Function to go to the previous month
   function prevMonth() {
     currentDate.setMonth(currentDate.getMonth() - 1);
     renderCalendar(currentDate);
   }
 
-  // Function to go to the next month
   function nextMonth() {
     currentDate.setMonth(currentDate.getMonth() + 1);
     renderCalendar(currentDate);
   }
 
-  // Event listeners for the navigation buttons
   prevMonthButton.addEventListener("click", prevMonth);
   nextMonthButton.addEventListener("click", nextMonth);
 
-  // Initial render of the calendar
   renderCalendar(currentDate);
 </script>
 </body>
