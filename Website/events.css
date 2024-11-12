@@ -20,7 +20,6 @@ header {
     padding: 8px 400px;
 }
 
-/* Header styling */
 header {
     background: #e64a19;
     padding: 15px 0;
@@ -30,7 +29,6 @@ header {
     width: 100%;
 }
 
-/* Header content layout */
 .header-content {
     display: flex;
     justify-content: space-between;
@@ -39,7 +37,6 @@ header {
     margin: 0 auto;
 }
 
-/* Title link styling */
 .title-link {
     font-size: 2rem;
     color: #ffffff;
