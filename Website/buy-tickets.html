@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Tickets</title>
+    <link rel="stylesheet" href="buy-tickets.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <h1>School Arena</h1>
+    <nav>
+        <ul>
+            <li><a href="calendar.html">Events Calendar</a></li>
+            <li><a href="events.html">Explore Events</a></li>
+            <li><a href="buy-tickets.html">Box Office</a></li> <!-- Updated to link to Buy Tickets page -->
+            <li><a href="#info">Information</a></li>
+            <li><a href="#planner">Planner</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="ticket-section">
+    <!-- Event Selection -->
+    <div class="event-list">
+        <h2>Select Event</h2>
+        <select id="eventSelect">
+            <option value="basketball">High School Basketball Championship - Dec 1, 2024</option>
+            <option value="concert">Winter Concert - Dec 15, 2024</option>
+            <option value="expo">Trade Expo - Jan 10, 2025</option>
+            <option value="arts">Spring Arts Festival - Mar 22, 2025</option>
+        </select>
+    </div>
+
+    <!-- Ticket Type Selection with Tiered Prices -->
+    <div class="ticket-options">
+        <h2>Choose Ticket Type</h2>
+        <select id="ticketSelect">
+            <option value="general" data-price="20">General Admission - $20</option>
+            <option value="standard" data-price="40">Standard - $40</option>
+            <option value="premium" data-price="70">Premium - $70</option>
+            <option value="vip" data-price="100">VIP - $100</option>
+        </select>
+
+        <!-- Quantity Selector -->
+        <label for="quantitySelect">Quantity:</label>
+        <input type="number" id="quantitySelect" min="1" max="10" value="1">
+    </div>
+
+    <!-- Cart Summary -->
+    <div class="purchase-summary">
+        <h2>Cart Summary</h2>
+        <div class="cart-item">
+            <p>Selected Ticket:</p>
+            <p id="ticketName">General Admission</p>
+        </div>
+        <div class="cart-item">
+            <p>Quantity:</p>
+            <p id="ticketQuantity">1</p>
+        </div>
+        <div class="subtotal">
+            <p>Subtotal:</p>
+            <p id="subtotal">$20.00</p>
+        </div>
+        <div class="tax">
+            <p>Tax (7%):</p>
+            <p id="tax">$1.00</p>
+        </div>
+        <div class="total">
+            <p>Total:</p>
+            <p id="total">$21.00</p>
+        </div>
+    </div>
+
+    <!-- Payment Form -->
+    <div class="purchase-form">
+        <h2>Payment Information</h2>
+        <form action="#">
+            <input type="text" placeholder="Name on Card" required>
+            <input type="text" placeholder="Card Number" required>
+            <input type="text" placeholder="Expiration Date" required>
+            <input type="text" placeholder="CVV" required>
+            <button type="submit">Purchase Tickets</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 School Arena. All rights reserved.</p>
+</footer>
+
+<script>
+    // JavaScript to calculate and update cart summary
+    document.getElementById('ticketSelect').addEventListener('change', updateCart);
+    document.getElementById('quantitySelect').addEventListener('input', updateCart);
+
+    function updateCart() {
+        const ticketType = document.getElementById('ticketSelect');
+        const selectedOption = ticketType.options[ticketType.selectedIndex];
+        const ticketName = selectedOption.textContent.split(' - ')[0];
+        const ticketPrice = parseFloat(selectedOption.getAttribute('data-price'));
+        const quantity = parseInt(document.getElementById('quantitySelect').value);
+        const subtotal = ticketPrice * quantity;
+        const tax = subtotal * 0.07;
+        const total = subtotal + tax;
+
+        document.getElementById('ticketName').textContent = ticketName;
+        document.getElementById('ticketQuantity').textContent = quantity;
+        document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+        document.getElementById('tax').textContent = `$${tax.toFixed(2)}`;
+        document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+    }
+
+    updateCart();
+</script>
+</body>
+</html>
