@@ -17,7 +17,6 @@
     margin-bottom: 20px;
 }
 
-/* Calendar Grid */
 #calendarGrid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -27,7 +26,6 @@
     margin-top: 30px;
 }
 
-/* Calendar Day Cells */
 .calendar-day {
     background-color: #fff7f0;
     padding: 20px;
@@ -44,7 +42,6 @@
     cursor: default;
 }
 
-/* Hover Effect for Calendar Days */
 .calendar-day:hover {
     background-color: #ffb74d;
     transform: translateY(-5px);
@@ -52,7 +49,6 @@
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Active Date Highlight */
 .calendar-day.active {
     background-color: #e64a19;
     color: #fff;
@@ -60,7 +56,6 @@
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Event Section */
 .event-label {
     display: block;
     font-size: 0.85rem;
@@ -80,20 +75,18 @@
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Event Labels for Different Event Types */
 .event-label.sports {
-    background-color: #388e3c; /* Green for sports events */
+    background-color: #388e3c; 
 }
 
 .event-label.concert {
-    background-color: #1976d2; /* Blue for concerts */
+    background-color: #1976d2; 
 }
 
 .event-label.expo {
-    background-color: #fbc02d; /* Yellow for expos */
+    background-color: #fbc02d; 
 }
 
-/* Header styling */
 header {
     background: #e64a19;
     padding: 15px 0;
@@ -103,7 +96,6 @@ header {
     width: 100%;
 }
 
-/* Header content layout */
 .header-content {
     display: flex;
     justify-content: space-between;
@@ -112,7 +104,6 @@ header {
     margin: 0 auto;
 }
 
-/* Title link styling */
 .title-link {
     font-size: 2rem;
     color: #ffffff;
@@ -125,7 +116,6 @@ header {
     color: #ddd2d2;
 }
 
-/* Navigation Buttons */
 .calendar-navigation {
     display: flex;
     justify-content: space-between;
@@ -144,7 +134,7 @@ header {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     border: none;
-    flex: 1; /* Ensures buttons are evenly spaced */
+    flex: 1; 
     margin: 0 10px;
 }
 
@@ -152,7 +142,6 @@ header {
     background-color: #e64a19;
     transform: translateY(-2px);
 }
-/* Header */
 header {
     background: #e64a19;
     color: #fff;
@@ -186,7 +175,6 @@ nav ul li a:hover {
     border-radius: 5px;
     transform: scale(1.05);
 }
-/* Button Container Styling */
 .button {
     display: inline-block;
     padding: 10px 20px;
@@ -199,7 +187,6 @@ nav ul li a:hover {
     transition: background-color 0.3s, transform 0.2s;
 }
 
-/* Body and Footer */
 body {
     font-family: 'Poppins', sans-serif;
     color: #3c3c3c;
@@ -220,7 +207,6 @@ button:hover {
     background-color: #e64a19;
 }
 
-/* Responsive Calendar for Smaller Screens */
 @media (max-width: 768px) {
     #calendarGrid {
         grid-template-columns: repeat(5, 1fr);
