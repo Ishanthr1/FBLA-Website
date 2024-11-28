@@ -9,31 +9,64 @@
 </head>
 <body>
 <header>
-  <h1><a href="index.html" class="title-link">School Arena</a></h1>
-  <nav>
-    <ul>
-      <li><a href="calendar.html">Events Calendar</a></li>
-      <li><a href="events.html">Explore Events</a></li>
-      <li><a href="buy-tickets.html">Box Office</a></li> <!-- Updated to link to Buy Tickets page -->
-      <li><a href="#info">Information</a></li>
-      <li><a href="#planner">Planner</a></li>
-    </ul>
-  </nav>
+  <div class="header-container">
+    <h1><a href="index.html" class="title-link">School Arena</a></h1>
+    <nav>
+      <ul>
+        <li><a href="calendar.html">Events Calendar</a></li>
+        <li><a href="events.html">Explore Events</a></li>
+        <li><a href="buy-tickets.html">Box Office</a></li>
+        <li><a href="#info">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
-<section id="calendar">
-  <div id="currentMonthLabel"></div>
-  <div id="calendarGrid"></div>
-
-  <!-- Navigation buttons for full calendar -->
-  <div class="calendar-navigation">
-    <button id="prevMonthButton" class="nav-button">Previous Month</button>
-    <button id="nextMonthButton" class="nav-button">Next Month</button>
+<!-- Main Section: Calendar with Event Details -->
+<section id="calendar-section">
+  <div class="calendar-header">
+    <h2>Upcoming Events</h2>
+    <p>Browse through our upcoming events and stay up to date with what's happening.</p>
+    <!-- Date Picker -->
+    <div class="date-picker">
+      <input type="month" id="month-picker" name="month-picker" onchange="navigateToMonth(event)">
+    </div>
   </div>
+
+  <!-- Calendar Grid -->
+  <div id="calendarWrapper">
+    <div id="currentMonthLabel"></div>
+    <div id="calendarGrid"></div>
+
+    <!-- Navigation buttons for full calendar -->
+    <div class="calendar-navigation">
+      <button id="prevMonthButton" class="nav-button">Previous Month</button>
+      <button id="nextMonthButton" class="nav-button">Next Month</button>
+    </div>
+  </div>
+
+  <!-- Event List Below Calendar -->
+  <section class="event-list">
+    <h3>Upcoming Events</h3>
+    <ul>
+      <li><strong>High School Basketball Championship:</strong> Dec 1, 2024 - 6:00 PM</li>
+      <li><strong>Winter Concert:</strong> Dec 15, 2024 - 7:30 PM</li>
+      <li><strong>Trade Expo:</strong> Jan 10, 2025 - 10:00 AM - 6:00 PM</li>
+      <li><strong>Spring Arts Festival:</strong> Mar 22, 2025 - 11:00 AM - 8:00 PM</li>
+    </ul>
+    <button class="cta-button">See All Events</button>
+  </section>
 </section>
 
+<!-- Footer Section -->
 <footer>
-  <p>&copy; 2024 School Arena. All rights reserved.</p>
+  <div class="footer-container">
+    <p>&copy; 2024 School Arena. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#faq">FAQs</a> | <a href="#contact">Contact</a> | <a href="#download">Download Full Schedule</a>
+    </div>
+  </div>
 </footer>
 
 <script>
@@ -51,7 +84,7 @@
 
   let currentDate = new Date();
 
-  // Function to render the calendar grid
+  // Render the calendar
   function renderCalendar(date) {
     calendarGrid.innerHTML = "";
     const year = date.getFullYear();
@@ -61,14 +94,14 @@
 
     currentMonthLabel.textContent = `${date.toLocaleString('default', { month: 'long' })} ${year}`;
 
-    // Create empty cells for days before the start of the month
+    // Render empty cells for previous month days
     for (let i = 0; i < firstDay; i++) {
       const emptyCell = document.createElement("div");
       emptyCell.classList.add("calendar-day", "empty");
       calendarGrid.appendChild(emptyCell);
     }
 
-    // Create cells for each day of the current month
+    // Render each day of the month
     for (let day = 1; day <= daysInMonth; day++) {
       const cell = document.createElement("div");
       cell.classList.add("calendar-day");
@@ -86,23 +119,30 @@
     }
   }
 
-  // Function to go to the previous month
+  // Navigate to the previous month
   function prevMonth() {
     currentDate.setMonth(currentDate.getMonth() - 1);
     renderCalendar(currentDate);
   }
 
-  // Function to go to the next month
+  // Navigate to the next month
   function nextMonth() {
     currentDate.setMonth(currentDate.getMonth() + 1);
     renderCalendar(currentDate);
   }
 
-  // Event listeners for the navigation buttons
+  // Navigate to a specific month using the picker
+  function navigateToMonth(event) {
+    const selectedMonth = new Date(event.target.value);
+    currentDate = selectedMonth;
+    renderCalendar(currentDate);
+  }
+
+  // Event listeners for navigation buttons
   prevMonthButton.addEventListener("click", prevMonth);
   nextMonthButton.addEventListener("click", nextMonth);
 
-  // Initial render of the calendar
+  // Initial render
   renderCalendar(currentDate);
 </script>
 </body>

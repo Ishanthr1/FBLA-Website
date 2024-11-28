@@ -1,210 +1,187 @@
-/* Basic Page Styling */
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px;
-    background-color: #fff7f0;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-    margin-top: 10px;
     font-family: 'Poppins', sans-serif;
+    background: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Header styling */
+/* Header Styles */
 header {
     background: #e64a19;
-    padding: 15px 0;
+    padding: 15px;
     text-align: center;
-    color: #ffffff;
-    margin-top: 10px;
-    width: 100%;
 }
 
-/* Header content layout */
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-/* Title link styling */
-.title-link {
+header .title-link {
     font-size: 2rem;
-    color: #ffffff;
-    font-weight: 600;
     text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.title-link:hover {
-    color: #ddd2d2;
-}
-
-/* Header */
-header {
-    background: #e64a19;
-    color: #fff;
-    padding: 8px 400px;
-}
-
-header h1 {
-    text-align: center;
-    font-weight: 600;
-    font-size: 2rem;
+    color: white;
 }
 
 nav ul {
-    list-style: none;
     display: flex;
     justify-content: center;
-    gap: 20px;
-    padding: 10px;
+    list-style: none;
+    gap: 15px;
 }
 
 nav ul li a {
-    color: #fff;
     text-decoration: none;
-    font-size: 1rem;
-    padding: 8px 15px;
-    transition: background 0.3s, transform 0.2s;
+    color: #fff;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
 }
 
 nav ul li a:hover {
     background: #d84315;
-    border-radius: 5px;
-    transform: scale(1.05);
 }
 
-header .button {
-    text-decoration: none;
-    color: #fff;
-    background-color: #e64a19;
-    padding: 8px 15px;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-header .button:hover {
-    background-color: #bf360c;
-}
-
-/* Ticket Purchase Container */
+/* Ticket Section */
 .ticket-section {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 20px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
-    max-width: 1000px;
     padding: 20px;
-    margin-top: 20px;
-    align-items: start;
+    max-width: 900px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Event List and Ticket Options */
-.event-list, .ticket-options {
-    background-color: #fff7f0;
+/* Ticket Section Styles */
+.ticket-section {
     padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    background: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown Containers */
+.event-list, .ticket-options {
+    margin-bottom: 20px;
 }
 
 .event-list h2, .ticket-options h2 {
+    font-size: 1.5rem;
     color: #e64a19;
-    font-size: 1.4rem;
     margin-bottom: 10px;
 }
 
-/* Ticket Purchase Summary (Cart) */
-.purchase-summary {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* Dropdown Styles */
+select {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
 }
 
-.purchase-summary h2 {
-    color: #3c3c3c;
-    font-size: 1.4rem;
+select:hover {
+    border-color: #e64a19;
+    background-color: #fff7f0;
+}
+
+select:focus {
+    border-color: #e64a19;
+    box-shadow: 0 0 5px rgba(230, 74, 25, 0.5);
+}
+
+/* Quantity Input */
+label {
+    font-size: 1rem;
+    color: #333;
+    margin-right: 10px;
+}
+
+#quantitySelect {
+    width: 60px;
+    padding: 8px;
+    text-align: center;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#quantitySelect:hover, #quantitySelect:focus {
+    border-color: #e64a19;
+}
+
+
+.ticket-section h2 {
+    color: #e64a19;
     margin-bottom: 15px;
 }
 
-/* Summary Details (Cart Items) */
-.cart-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    font-size: 1rem;
-}
-
-.cart-item p {
-    margin: 0;
-}
-
-.total {
-    font-weight: 600;
-    font-size: 1.2rem;
-    margin-top: 15px;
-}
-
-.tax, .subtotal, .total {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 5px;
-}
-
-/* Form Elements */
-select, input[type="number"], .purchase-form input[type="text"] {
-    width: 93%;
-    padding: 12px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    font-size: 1rem;
-    margin-bottom: 10px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease;
-}
-
-select:focus, input[type="number"]:focus, .purchase-form input[type="text"]:focus {
-    border-color: #e64a19;
-    outline: none;
-}
-
-/* Purchase Button */
-button {
-    background-color: #e64a19;
-    color: #fff;
-    border: none;
-    padding: 12px;
-    width: 100%;
-    font-size: 1.1rem;
-    margin-top: 15px;
+/* Cart Summary */
+.purchase-summary {
+    background: #ffe0b2;
+    padding: 20px;
     border-radius: 8px;
-    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
 }
 
-button:hover {
-    background-color: #bf360c;
+.purchase-summary .cart-item, .subtotal, .tax, .total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.total p {
+    font-weight: bold;
+    color: #e64a19;
+}
+
+/* Purchase Form */
+.purchase-form {
+    text-align: center;
+}
+
+.purchase-form input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 90%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.purchase-button {
+    background: #e64a19;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.purchase-button:hover {
+    background: #bf360c;
 }
 
 /* Footer */
 footer {
     text-align: center;
     background: #e64a19;
-    color: #fff;
-    padding: 15px 0;
-    margin-top: 30px;
-    width: 100%;
-    font-size: 0.9rem;
+    color: white;
+    padding: 10px 0;
 }

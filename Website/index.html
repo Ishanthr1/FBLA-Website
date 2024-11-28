@@ -3,65 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>School Arena</title>
+  <title>Hillcrest High Gym - Home</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="events.css">
-  <link rel="stylesheet" href="calendar.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
-    <h1><a href="index.html" class="title-link">School Arena</a></h1>
-  <nav>
-    <ul>
-      <li><a href="calendar.html">Events Calendar</a></li>
-      <li><a href="events.html">Explore Events</a></li>
-      <li><a href="buy-tickets.html">Box Office</a></li> <!-- Updated to link to Buy Tickets page -->
-      <li><a href="#info">Information</a></li>
-      <li><a href="#planner">Planner</a></li>
-    </ul>
-  </nav>
+  <div class="header-container">
+    <h1><a href="index.html" class="title-link">Hillcrest High Gym</a></h1>
+    <nav>
+      <ul>
+        <li><a href="calendar.html">Events Calendar</a></li>
+        <li><a href="events.html">Explore Events</a></li>
+        <li><a href="buy-tickets.html">Box Office</a></li>
+        <li><a href="#info">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
-<section id="featured-events">
-  <h2>Welcome to the School Arena</h2>
-  <p>Your venue for community events, concerts, sports, and more!</p>
-  <a href="events.html" class="button">Explore Events</a>
-</section>
-
-<section id="calendar">
-  <h2>Current Month</h2>
-  <div id="currentMonthLabel"></div>
-  <div id="calendarGrid"></div>
-</section>
-
-<section id="box-office">
-  <h2>Box Office</h2>
-  <p>Buy tickets for upcoming events here!</p>
-  <a href="buy-tickets.html" class="button">Buy Tickets</a> <!-- Updated to link to Buy Tickets page -->
-</section>
-
-<section id="info">
-  <h2>Arena Information</h2>
-  <div>
-    <h3>Directions & Parking</h3>
-    <p>Find us at [address]. Parking is available on-site.</p>
+<section class="hero">
+  <div class="hero-content">
+    <h2>Welcome to Hillcrest High Arena</h2>
+    <p>Your one-stop destination for events, entertainment, and excitement!</p>
+    <a href="buy-tickets.html" class="cta-button">Get Tickets Now</a>
   </div>
 </section>
 
-<section id="planner">
-  <h2>Arena Rental Information</h2>
-  <p>Book the arena for your next event!</p>
-  <a href="#" class="button">Contact Us</a>
+<section class="features">
+  <h2>Why Choose Us?</h2>
+  <div class="feature-cards">
+    <div class="card">
+      <h3>State-of-the-Art Arena</h3>
+      <p>Experience world-class facilities designed for your comfort and enjoyment.</p>
+    </div>
+    <div class="card">
+      <h3>Exciting Events</h3>
+      <p>From concerts to championships, there's something for everyone.</p>
+    </div>
+    <div class="card">
+      <h3>Seamless Booking</h3>
+      <p>Our hassle-free ticketing system makes booking a breeze.</p>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter">
+  <h2>Stay Updated</h2>
+  <p>Subscribe to our newsletter for the latest updates and exclusive offers.</p>
+  <form>
+    <input type="email" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
+  </form>
 </section>
 
 <footer>
-  <p>&copy; 2024 School Arena. All rights reserved.</p>
+  <div class="footer-container">
+    <p>&copy; 2024 School Arena. All rights reserved.</p>
+  </div>
 </footer>
-
-<script src="calendar.js"></script>
 </body>
 </html>
+
+
 
 
 

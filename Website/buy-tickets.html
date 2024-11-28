@@ -9,12 +9,12 @@
 </head>
 <body>
 <header>
-    <h1>School Arena</h1>
+    <h1><a href="index.html" class="title-link">School Arena</a></h1>
     <nav>
         <ul>
             <li><a href="calendar.html">Events Calendar</a></li>
             <li><a href="events.html">Explore Events</a></li>
-            <li><a href="buy-tickets.html">Box Office</a></li> <!-- Updated to link to Buy Tickets page -->
+            <li><a href="buy-tickets.html">Box Office</a></li>
             <li><a href="#info">Information</a></li>
             <li><a href="#planner">Planner</a></li>
         </ul>
@@ -33,7 +33,7 @@
         </select>
     </div>
 
-    <!-- Ticket Type Selection with Tiered Prices -->
+    <!-- Ticket Type Selection -->
     <div class="ticket-options">
         <h2>Choose Ticket Type</h2>
         <select id="ticketSelect">
@@ -43,7 +43,6 @@
             <option value="vip" data-price="100">VIP - $100</option>
         </select>
 
-        <!-- Quantity Selector -->
         <label for="quantitySelect">Quantity:</label>
         <input type="number" id="quantitySelect" min="1" max="10" value="1">
     </div>
@@ -65,11 +64,11 @@
         </div>
         <div class="tax">
             <p>Tax (7%):</p>
-            <p id="tax">$1.00</p>
+            <p id="tax">$1.40</p>
         </div>
         <div class="total">
             <p>Total:</p>
-            <p id="total">$21.00</p>
+            <p id="total">$21.40</p>
         </div>
     </div>
 
@@ -81,7 +80,7 @@
             <input type="text" placeholder="Card Number" required>
             <input type="text" placeholder="Expiration Date" required>
             <input type="text" placeholder="CVV" required>
-            <button type="submit">Purchase Tickets</button>
+            <button type="submit" class="purchase-button">Purchase Tickets</button>
         </form>
     </div>
 </section>
@@ -91,7 +90,7 @@
 </footer>
 
 <script>
-    // JavaScript to calculate and update cart summary
+    // JavaScript for Cart Updates
     document.getElementById('ticketSelect').addEventListener('change', updateCart);
     document.getElementById('quantitySelect').addEventListener('input', updateCart);
 
