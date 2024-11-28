@@ -19,14 +19,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         currentMonthLabel.textContent = `${date.toLocaleString('default', { month: 'long' })} ${year}`;
 
-// Create empty cells for days before the start of the month
 for (let i = 0; i < firstDay; i++) {
     const emptyCell = document.createElement("div");
     emptyCell.classList.add("calendar-day", "empty");
     calendarGrid.appendChild(emptyCell);
 }
 
-// Create cells for each day of the current month
 for (let day = 1; day <= daysInMonth; day++) {
     const cell = document.createElement("div");
     cell.classList.add("calendar-day");
