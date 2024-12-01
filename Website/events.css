@@ -169,3 +169,56 @@ footer {
     margin-top: 20px;
     font-size: 0.9rem;
 }
+
+
+@media screen and (max-width: 600px) {
+    header .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .title-link {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+        gap: 10px;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .event-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .event-card {
+        padding: 15px;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+/* For tablets (width between 600px and 900px) */
+@media screen and (max-width: 900px) {
+    .event-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+}

@@ -12,37 +12,6 @@ body {
     line-height: 1.6;
 }
 
-/* Header */
-header {
-    background: #e64a19;
-    padding: 20px;
-    text-align: center;
-    color: #fff;
-}
-
-header .title-link {
-    font-size: 2rem;
-    text-decoration: none;
-    color: #fff;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 10px;
-}
-
-/* Global Styles */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f8f7;
-    color: #333;
-}
-
 a {
     text-decoration: none;
     color: inherit;
@@ -248,4 +217,116 @@ footer {
 .social-links img {
     width: 24px;
     height: 24px;
+}
+
+/* Responsive Styles */
+
+/* Mobile Devices - Below 600px */
+@media (max-width: 600px) {
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .feature-cards {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .newsletter input {
+        width: 200px;
+    }
+
+    .footer-container {
+        padding: 10px;
+    }
+}
+
+/* Tablets - 600px to 900px */
+@media (min-width: 600px) and (max-width: 900px) {
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .cta-button {
+        padding: 10px 22px;
+        font-size: 1rem;
+    }
+
+    .feature-cards {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .card {
+        width: 45%;
+    }
+
+    .newsletter input {
+        width: 220px;
+    }
+
+    .footer-container {
+        padding: 15px;
+    }
+}
+
+/* Desktops - Above 900px */
+@media (min-width: 900px) {
+    .hero {
+        padding: 100px 20px;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+    }
+
+    .feature-cards {
+        justify-content: space-around;
+    }
+
+    .card {
+        width: 300px;
+    }
+
+    .newsletter input {
+        width: 250px;
+    }
+
+    .footer-container {
+        padding: 20px;
+    }
 }

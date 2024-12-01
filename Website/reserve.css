@@ -137,3 +137,69 @@ footer {
     margin-top: 20px;
     font-size: 0.9rem;
 }
+
+@media screen and (max-width: 600px) {
+    header .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .title-link {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+        gap: 10px;
+    }
+
+    .booking-form {
+        padding: 15px;
+    }
+
+    .booking-form input,
+    .booking-form select,
+    .booking-form button {
+        padding: 12px;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+/* For tablets (width between 600px and 900px) */
+@media screen and (max-width: 900px) {
+    header .header-content {
+        flex-direction: column;
+    }
+
+    .title-link {
+        font-size: 1.8rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    .booking-form input,
+    .booking-form select,
+    .booking-form button {
+        padding: 12px;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}
+
+/* For larger devices like laptops and desktops */
+@media screen and (min-width: 901px) {
+/* These styles are for larger devices, no specific changes needed */
+    .booking-form input,
+    .booking-form select,
+    .booking-form button {
+        padding: 10px;
+    }
+}

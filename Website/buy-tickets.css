@@ -465,3 +465,154 @@ footer {
         margin-top: 20px;
     }
 }
+
+/* Mobile Devices - Below 600px (smartphones) */
+@media (max-width: 600px) {
+    .ticket-page {
+        padding: 20px;
+    }
+
+    .ticket-details {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .ticket-details h1 {
+        font-size: 1.5rem; /* Adjust title size */
+    }
+
+    .ticket-options {
+        flex-direction: column;
+    }
+
+    .ticket-options label {
+        font-size: 1rem;
+    }
+
+    .ticket-options select,
+    .ticket-options input {
+        width: 100%;
+    }
+
+    .ticket-quantity {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .quantity-input {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .total-price {
+        font-size: 1.2rem;
+    }
+
+    .purchase-btn {
+        width: 100%;
+    }
+}
+
+/* Tablets - 600px to 900px */
+@media (min-width: 600px) and (max-width: 900px) {
+    .ticket-page {
+        padding: 30px;
+    }
+
+    .ticket-details {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .ticket-details h1 {
+        font-size: 1.75rem;
+    }
+
+    .ticket-options {
+        flex-direction: column;
+    }
+
+    .ticket-options label {
+        font-size: 1rem;
+    }
+
+    .ticket-options select,
+    .ticket-options input {
+        width: 100%;
+    }
+
+    .ticket-quantity {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .quantity-input {
+        width: 60px;
+        margin-top: 0;
+    }
+
+    .total-price {
+        font-size: 1.3rem;
+    }
+
+    .purchase-btn {
+        width: 100%;
+    }
+}
+
+/* Desktops - Above 900px */
+@media (min-width: 900px) {
+    .ticket-page {
+        padding: 40px;
+    }
+
+    .ticket-details {
+        width: 80%;
+        padding: 30px;
+    }
+
+    .ticket-details h1 {
+        font-size: 2rem;
+    }
+
+    .ticket-options {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .ticket-options label {
+        font-size: 1rem;
+    }
+
+    .ticket-options select,
+    .ticket-options input {
+        width: auto;
+    }
+
+    .ticket-quantity {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .quantity-input {
+        width: 60px;
+        margin-top: 0;
+    }
+
+    .total-price {
+        font-size: 1.5rem;
+    }
+
+    .purchase-btn {
+        width: auto;
+    }
+}
+
+/* Larger Screens (for high resolution) */
+@media (min-width: 1200px) {
+    .ticket-details {
+        width: 70%;
+        padding: 40px;
+    }
+}
+
