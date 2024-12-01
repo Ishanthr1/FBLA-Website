@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arena Rental - Reserve Your Event</title>
+  <link rel="stylesheet" href="reserve.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <h1><a href="index.html" class="title-link">Hillcrest High Gym</a></h1>
+    <nav>
+      <ul>
+        <li><a href="calendar.html">Events Calendar</a></li>
+        <li><a href="events.html">Explore Events</a></li>
+        <li><a href="buy-tickets.html">Box Office</a></li>
+        <li><a href="infopage.html">Information</a></li>
+        <li><a href="reserve.html">Reservation</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="info-section">
+  <h2>Arena Rental Information</h2>
+  <p>Our versatile gymnasium is available for rent for various events, including:</p>
+  <ul>
+    <li>Local Sporting Events</li>
+    <li>Live Concerts</li>
+    <li>Trade Shows</li>
+    <li>Community Gatherings</li>
+    <li>Private Events</li>
+  </ul>
+
+  <h3>Rental Details</h3>
+  <p>Our arena is equipped with:</p>
+  <ul>
+    <li>High-quality sound and lighting systems</li>
+    <li>Seating for up to 3,500 people</li>
+    <li>State-of-the-art flooring suitable for various sports</li>
+    <li>Ample parking space</li>
+  </ul>
+
+  <h3>Rental Costs</h3>
+  <p>Rental fees vary based on the event type and duration. Please contact us for a personalized quote. We offer flexible packages to suit your needs.</p>
+
+  <h3>Booking Process</h3>
+  <p>To reserve the arena for your event, please follow the steps below:</p>
+  <ol>
+    <li>Fill out the booking form below with your event details.</li>
+    <li>We will confirm availability and provide a quote.</li>
+    <li>Once confirmed, sign the rental agreement and make a deposit.</li>
+    <li>Your event is officially booked!</li>
+  </ol>
+</section>
+
+<section class="contact-section">
+  <h2>Contact Information</h2>
+  <p>If you have any questions or would like to book the arena, please get in touch:</p>
+  <ul>
+    <li><strong>Phone:</strong> (801) 826-6000</li>
+    <li><strong>Email:</strong> <a href="mailto:arena@domain.com">arena@domain.com</a></li>
+    <li><strong>Address:</strong> 7350 S 900 E, Midvale, UT 84047</li>
+  </ul>
+</section>
+
+<section class="booking-form">
+  <h2>Event Booking Form</h2>
+  <form action="#" method="POST">
+    <label for="event-name">Event Name:</label>
+    <input type="text" id="event-name" name="event-name" required><br>
+
+    <label for="event-date">Event Date:</label>
+    <input type="date" id="event-date" name="event-date" required><br>
+
+    <label for="event-type">Event Type:</label>
+    <select id="event-type" name="event-type" required>
+      <option value="sporting">Sporting Event</option>
+      <option value="concert">Concert</option>
+      <option value="trade-show">Trade Show</option>
+      <option value="community">Community Event</option>
+      <option value="private">Private Event</option>
+    </select><br>
+
+    <label for="contact-info">Your Contact Information:</label>
+    <input type="email" id="contact-info" name="contact-info" required><br>
+
+    <button type="submit" class="button">Submit Booking Request</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2024 School Arena. All Rights Reserved.</p>
+</footer>
+</body>
+</html>

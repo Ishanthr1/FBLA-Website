@@ -1,0 +1,117 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e8f5e9; /* Light green background */
+    color: #1b5e20; /* Dark green text */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+header {
+    font-family: 'Poppins', sans-serif;
+    background-color: #2e7d32; /* Medium green */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Main Content */
+main.info-page {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #2e7d32;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.title-link {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.title-link:hover {
+    color: #a5d6a7;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 1rem;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: #1b5e20;
+    border-radius: 5px;
+    color: #a5d6a7;
+}
+
+main h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #1b5e20;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #66bb6a; /* Light green border */
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+
+main ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+main li {
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+main ul ul {
+    margin-left: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #2e7d32;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}

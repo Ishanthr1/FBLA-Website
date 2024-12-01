@@ -10,18 +10,19 @@
 <body>
 <header>
   <div class="header-container">
-    <h1><a href="index.html" class="title-link">School Arena</a></h1>
+    <h1><a href="index.html" class="title-link">Hillcrest High Gym</a></h1>
     <nav>
       <ul>
         <li><a href="calendar.html">Events Calendar</a></li>
         <li><a href="events.html">Explore Events</a></li>
         <li><a href="buy-tickets.html">Box Office</a></li>
-        <li><a href="#info">About Us</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="infopage.html">Information</a></li>
+        <li><a href="reserve.html">Reservation</a></li>
       </ul>
     </nav>
   </div>
 </header>
+
 
 <!-- Main Section: Calendar with Event Details -->
 <section id="calendar-section">
@@ -55,7 +56,7 @@
       <li><strong>Trade Expo:</strong> Jan 10, 2025 - 10:00 AM - 6:00 PM</li>
       <li><strong>Spring Arts Festival:</strong> Mar 22, 2025 - 11:00 AM - 8:00 PM</li>
     </ul>
-    <button class="cta-button">See All Events</button>
+    <a href="events.html" class="cta-button">See All Events</a>
   </section>
 </section>
 
@@ -133,10 +134,13 @@
 
   // Navigate to a specific month using the picker
   function navigateToMonth(event) {
-    const selectedMonth = new Date(event.target.value);
-    currentDate = selectedMonth;
+    const selectedDate = event.target.value.split("-");
+    const year = parseInt(selectedDate[0], 10);
+    const month = parseInt(selectedDate[1], 10) - 1; // Months are zero-based in JavaScript
+    currentDate = new Date(year, month, 1); // Set the date to the first of the selected month
     renderCalendar(currentDate);
   }
+
 
   // Event listeners for navigation buttons
   prevMonthButton.addEventListener("click", prevMonth);

@@ -1,5 +1,53 @@
+header {
+    background-color: #2e7d32;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.title-link {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.title-link:hover {
+    color: #a5d6a7;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 1rem;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: #1b5e20;
+    border-radius: 5px;
+    color: #a5d6a7;
+}
+
 .event-card {
-    background-color: #ffe0b2;
+    background-color: #d0f4de;
     padding: 20px;
     border-radius: 12px;
     margin: 15px 0;
@@ -10,18 +58,18 @@
 
 .event-card:hover {
     transform: translateY(-5px);
-    background-color: #ffb74d;
+    background-color: #a3e4b8;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 header {
-    background: #e64a19;
+    background: #2e7d32;
     color: #fff;
     padding: 8px 400px;
 }
 
 header {
-    background: #e64a19;
+    background: #2e7d32;
     padding: 15px 0;
     text-align: center;
     color: #ffffff;
@@ -46,7 +94,7 @@ header {
 }
 
 .title-link:hover {
-    color: #ddd2d2;
+    color: #d9f0d9;
 }
 
 header h1 {
@@ -72,7 +120,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background: #d84315;
+    background: #1b5e20;
     border-radius: 5px;
     transform: scale(1.05);
 }
@@ -80,12 +128,12 @@ nav ul li a:hover {
 body {
     font-family: 'Poppins', sans-serif;
     color: #3c3c3c;
-    background-color: #fff7f0;
+    background-color: #e8f5e9;
     line-height: 1.6;
 }
 
 h2 {
-    color: #bf360c;
+    color: #1b5e20;
     font-weight: 600;
     font-size: 1.5rem;
     margin-bottom: 10px;
@@ -100,7 +148,7 @@ p {
 .button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #e64a19;
+    background-color: #2e7d32;
     color: #fff;
     border-radius: 5px;
     text-decoration: none;
@@ -109,13 +157,13 @@ p {
 }
 
 .button:hover {
-    background-color: #bf360c;
+    background-color: #1b5e20;
     transform: scale(1.05);
 }
 
 footer {
     text-align: center;
-    background: #e64a19;
+    background: #2e7d32;
     color: #fff;
     padding: 15px 0;
     margin-top: 20px;
