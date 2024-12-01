@@ -1,187 +1,467 @@
-/* Global Styles */
+/* Reset Styles */
 * {
-    margin: 0;
-    padding: 0;
+    margin-top: 20;
+    padding-top: 20;
     box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+header {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    position: absolute; /* Position it at the top of the page */
+    top: 0; /* Align to the very top */
+    left: 0; /* Ensure it's aligned with the left edge */
+    text-align: center; /* Centers the title */
+    padding-top: 10px; /* Optional padding if needed */
+    background-color: #2e7d32;
+    padding: 5px 0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.title-link {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.title-link:hover {
+    color: #a5d6a7;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 1rem;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: #1b5e20;
+    border-radius: 5px;
+    color: #a5d6a7;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #f7f7f7;
-    color: #333;
-    line-height: 1.6;
-}
-
-/* Header Styles */
-header {
-    background: #e64a19;
-    padding: 15px;
-    text-align: center;
-}
-
-header .title-link {
-    font-size: 2rem;
-    text-decoration: none;
-    color: white;
-}
-
-nav ul {
     display: flex;
     justify-content: center;
-    list-style: none;
-    gap: 15px;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 20;
+    font-family: 'Inter', sans-serif;
+    background-color: #eef7ee; /* Light green background */
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-}
-
-nav ul li a:hover {
-    background: #d84315;
-}
-
-/* Ticket Se    ction */
-.ticket-section {
-    padding: 20px;
-    max-width: 900px;
-    margin: 20px auto;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Ticket Section Styles */
-.ticket-section {
-    padding: 20px;
-    max-width: 900px;
-    margin: 20px auto;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Dropdown Containers */
-.event-list, .ticket-options {
-    margin-bottom: 20px;
-}
-
-.event-list h2, .ticket-options h2 {
-    font-size: 1.5rem;
-    color: #e64a19;
-    margin-bottom: 10px;
-}
-
-/* Dropdown Styles */
-select {
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
     width: 100%;
-    max-width: 400px;
-    padding: 12px;
-    margin: 0 auto;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+}
+
+/* SVG Container */
+.seating {
     font-family: 'Poppins', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-select:hover {
-    border-color: #e64a19;
-    background-color: #fff7f0;
-}
-
-select:focus {
-    border-color: #e64a19;
-    box-shadow: 0 0 5px rgba(230, 74, 25, 0.5);
-}
-
-/* Quantity Input */
-label {
-    font-size: 1rem;
-    color: #333;
-    margin-right: 10px;
-}
-
-#quantitySelect {
-    width: 60px;
-    padding: 8px;
-    text-align: center;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-#quantitySelect:hover, #quantitySelect:focus {
-    border-color: #e64a19;
-}
-
-
-.ticket-section h2 {
-    color: #e64a19;
-    margin-bottom: 15px;
-}
-
-/* Cart Summary */
-.purchase-summary {
-    background: #ffe0b2;
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-right: 1px solid #d4e8d4;
     padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.purchase-summary .cart-item, .subtotal, .tax, .total {
+/* Sidebar */
+.sidebar {
+    font-family: 'Poppins', sans-serif;
+    flex: 1;
+    background-color: #ffffff;
+    color: #2f4f2f;
+    padding: 20px;
+    overflow-y: auto;
+    height: 100vh;
+    box-sizing: border-box;
+    border-left: 1px solid #d4e8d4;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h3 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #3a6c3a;
+}
+
+.section-info {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #d8f3d8, #8dc88d); /* Green gradient */
+    transition: transform 0.3s ease;
+}
+
+.sidebar {
+    font-family: 'Poppins', sans-serif;
+    flex: 1;
+    background-color: #ffffff;
+    color: #2f4f2f;
+    padding: 20px;
+    overflow-y: auto;
+    height: 100vh;
+    box-sizing: border-box;
+    border-left: 1px solid #d4e8d4;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    scrollbar-width: thin;
+    scrollbar-color: #4caf50 #eef7ee; /* Customize scrollbar colors */
+}
+
+/* Webkit-based browsers */
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: #4caf50;
+    border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background-color: #eef7ee;
+}
+
+
+.section-info:hover {
+    transform: scale(1.02);
+}
+
+.section-header {
+    font-family: 'Poppins', sans-serif;
+    background-color: #4caf50;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    border: none;
+    text-align: center;
+}
+
+.section-header:hover {
+    background-color: #388e3c;
+}
+
+.section-content {
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    display: none; /* Collapsed by default */
+    background-color: #f9fff9; /* Subtle green */
+    color: #2f4f2f;
+    font-size: 14px;
+}
+
+
+
+.section-content p {
+    margin: 10px 0;
+}
+
+.row-selector label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.row-selector select {
+    font-family: 'Poppins', sans-serif;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #c8e6c9;
+    outline: none;
+    font-size: 14px;
+    background-color: #ffffff;
+    transition: border-color 0.3s ease;
+}
+
+.row-selector select:focus {
+    border-color: #4caf50;
+}
+
+/* Event Selector Styling */
+.event-selector {
+    margin-bottom: 15px; /* Add spacing below the event selector */
+}
+
+.event-selector label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #333; /* Adjust color for better visibility */
+}
+
+.event-selector select {
+    font-family: 'Poppins', sans-serif;
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc; /* Light border for a clean look */
+    border-radius: 4px; /* Slight rounding for modern feel */
+    background-color: #f9f9f9; /* Subtle background color */
+    color: #333;
+    cursor: pointer;
+    outline: none; /* Remove default browser outline */
+    transition: border-color 0.3s;
+}
+
+.event-selector select:focus {
+    border-color: #007bff; /* Highlight color on focus */
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5); /* Slight shadow for focus */
+}
+
+/* SVG Styles */
+.tier rect {
+    cursor: pointer;
+    transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.tier rect:hover {
+    transform: scale(1.1);
+    fill: #81c784; /* Soft green */
+}
+
+.tier text {
+    font-size: 12px;
+    font-family: 'Arial', sans-serif;
+    fill: #2f4f2f;
+    pointer-events: none;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 300px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-right: 2px solid #ddd;
+    float: left;
+}
+
+.section-info {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.section-header {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.section-content {
+    display: none; /* Hidden by default */
+}
+
+.purchase-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.purchase-btn:hover {
+    background-color: #45a049;
+}
+
+
+/* Sidebar styling */
+.sidebar {
+    width: 300px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-right: 2px solid #ddd;
+    float: left;
+}
+
+.section-info {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.section-header {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.section-content {
+    display: none; /* Hidden by default */
+}
+
+.purchase-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #1b5e20;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.purchase-btn:hover {
+    background: #388e3c;
+    transform: scale(1.05);
+}
+
+/* Modal Styling */
+.modal {
+    font-family: 'Poppins', sans-serif;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    font-family: 'Poppins', sans-serif;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-family: 'Arial', sans-serif;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Form inputs */
+input[type="text"] {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+/* Card details layout */
+.card-details {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
 }
 
-.total p {
-    font-weight: bold;
-    color: #e64a19;
+.card-item {
+    width: 48%;
 }
 
-/* Purchase Form */
-.purchase-form {
-    text-align: center;
-}
-
-.purchase-form input {
-    display: block;
-    margin: 10px auto;
-    padding: 10px;
-    width: 90%;
-    max-width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.purchase-button {
-    background: #e64a19;
+.submit-btn {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
     color: white;
-    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    font-size: 16px;
 }
 
-.purchase-button:hover {
-    background: #bf360c;
+.submit-btn:hover {
+    background-color: #45a049;
 }
 
-/* Footer */
 footer {
-    text-align: center;
-    background: #e64a19;
-    color: white;
-    padding: 10px 0;
+    width: 100%;
+    position: absolute; /* Position it at the bottom of the page */
+    bottom: 0; /* Align to the very bottom */
+    left: 0; /* Ensure it's aligned with the left edge */
+    text-align: center; /* Centers the content inside the footer */
+    padding-bottom: 10px; /* Optional padding if needed */
+}
+
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e8f5e9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4caf50;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #388e3c;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .seating {
+        flex: none;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-top: 20px;
+    }
 }
