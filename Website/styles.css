@@ -223,6 +223,17 @@ footer {
 
 /* Mobile Devices - Below 600px */
 @media (max-width: 600px) {
+    header .header-content {
+        flex-direction: column;
+    }
+
+    .title-link {
+        font-size: 1.8rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
     .hero {
         padding: 60px 20px;
     }
