@@ -224,16 +224,38 @@ footer {
 /* Mobile Devices - Below 600px */
 @media (max-width: 600px) {
     header .header-content {
+        display: none; /* Hide the header content */
+    }
+
+    .menu-toggle {
+        display: block; /* Show the hamburger icon */
+        position: absolute; /* Position the hamburger icon */
+        top: 20px; /* Distance from the top of the screen */
+        right: 20px; /* Distance from the right side of the screen */
+        cursor: pointer;
+    }
+
+    .menu-toggle div {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 5px 0;
+    }
+
+    nav ul {
+        display: none; /* Hide navigation by default */
         flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul.active {
+        display: flex; /* Show navigation when 'active' class is added */
     }
 
     .title-link {
         font-size: 1.8rem;
     }
 
-    nav ul {
-        flex-direction: column;
-    }
     .hero {
         padding: 60px 20px;
     }
@@ -268,6 +290,7 @@ footer {
         padding: 10px;
     }
 }
+
 
 /* Tablets - 600px to 900px */
 @media (min-width: 600px) and (max-width: 900px) {

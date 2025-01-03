@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hillcrest High Gym - Home</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="home.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
   <div class="header-container">
-    <h1><a href="index.html" class="title-link">Hillcrest High Gym</a></h1>
+    <h1><a href="home.html" class="title-link">Hillcrest High Gym</a></h1>
     <nav>
       <ul>
         <li><a href="calendar.html">Events Calendar</a></li>
@@ -20,6 +20,12 @@
         <li><a href="reserve.html">Reservation</a></li>
       </ul>
     </nav>
+  </div>
+
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
 </header>
 
@@ -60,6 +66,12 @@
     <button type="submit">Subscribe</button>
   </form>
 </section>
+<script>
+  function toggleMenu() {
+    const nav = document.querySelector('nav ul');
+    nav.classList.toggle('active');
+  }
+</script>
 
 <footer>
   <div class="footer-container">
