@@ -28,13 +28,6 @@
   </div>
 </header>
 
-<script>
-  function toggleMenu() {
-    const nav = document.querySelector('nav ul');
-    nav.classList.toggle('active');
-  }
-</script>
-
 <section class="hero">
   <div class="hero-content">
     <h2>Welcome to Hillcrest High Arena</h2>
@@ -46,17 +39,23 @@
 <section class="features">
   <h2>Why Choose Us?</h2>
   <div class="feature-cards">
-    <div class="card">
-      <h3>State-of-the-Art Arena</h3>
-      <p>Experience world-class facilities designed for your comfort and enjoyment.</p>
+    <div class="tilt-container">
+      <div class="card">
+        <h3>State-of-the-Art Arena</h3>
+        <p>Experience world-class facilities designed for your comfort and enjoyment.</p>
+      </div>
     </div>
-    <div class="card">
-      <h3>Exciting Events</h3>
-      <p>From concerts to championships, there's something for everyone.</p>
+    <div class="tilt-container">
+      <div class="card">
+        <h3>Exciting Events</h3>
+        <p>From concerts to championships, there's something for everyone.</p>
+      </div>
     </div>
-    <div class="card">
+    <div class="tilt-container">
+      <div class="card">
         <h3>Seamless Booking</h3>
-      <p>Our hassle-free ticketing system makes booking a breeze.</p>
+        <p>Our hassle-free ticketing system makes booking a breeze.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -71,6 +70,37 @@
     <button type="submit">Subscribe</button>
   </form>
 </section>
+
+<script>
+  function toggleMenu() {
+    const nav = document.querySelector('nav ul');
+    nav.classList.toggle('active');
+  }
+  const tiltContainers = document.querySelectorAll('.tilt-container');
+
+  tiltContainers.forEach(container => {
+    container.addEventListener('mousemove', (e) => {
+      const card = container.querySelector('.card');
+      const rect = container.getBoundingClientRect();
+      const offsetX = e.clientX - rect.left;
+      const offsetY = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const deltaX = (offsetX - centerX) / centerX;
+      const deltaY = (offsetY - centerY) / centerY;
+
+      const rotateX = deltaY * 15; // Adjust the strength of the tilt on the X-axis
+      const rotateY = deltaX * -15; // Adjust the strength of the tilt on the Y-axis
+
+      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    container.addEventListener('mouseleave', () => {
+      const card = container.querySelector('.card');
+      card.style.transform = 'rotateX(0) rotateY(0)';
+    });
+  });
+</script>
 
 <footer>
   <div class="footer-container">
