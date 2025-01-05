@@ -1,4 +1,3 @@
-/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -101,6 +100,26 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
+.cta-button:hover {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
 /* Features Section */
 .features {
     padding: 50px 20px;
@@ -133,6 +152,14 @@ nav ul li a:hover {
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
@@ -219,6 +246,8 @@ footer {
     height: 24px;
 }
 
+
+
 /* Responsive Styles */
 
 /* Mobile Devices - Below 600px */
@@ -290,7 +319,6 @@ footer {
         padding: 10px;
     }
 }
-
 
 /* Tablets - 600px to 900px */
 @media (min-width: 600px) and (max-width: 900px) {

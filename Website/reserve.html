@@ -33,7 +33,6 @@
     <li>Community Gatherings</li>
     <li>Private Events</li>
   </ul>
-
   <h3>Rental Details</h3>
   <p>Our arena is equipped with:</p>
   <ul>
@@ -42,18 +41,11 @@
     <li>State-of-the-art flooring suitable for various sports</li>
     <li>Ample parking space</li>
   </ul>
-
   <h3>Rental Costs</h3>
   <p>Rental fees vary based on the event type and duration. Please contact us for a personalized quote. We offer flexible packages to suit your needs.</p>
-
   <h3>Booking Process</h3>
-  <p>To reserve the arena for your event, please follow the steps below:</p>
-  <ol>
-    <li>Fill out the booking form below with your event details.</li>
-    <li>We will confirm availability and provide a quote.</li>
-    <li>Once confirmed, sign the rental agreement and make a deposit.</li>
-    <li>Your event is officially booked!</li>
-  </ol>
+  <p>To reserve the arena for your event, please click the button below to fill out the booking form.</p>
+  <button id="openModal">Book Now</button>
 </section>
 
 <section class="contact-section">
@@ -66,33 +58,127 @@
   </ul>
 </section>
 
-<section class="booking-form">
-  <h2>Event Booking Form</h2>
-  <form action="#" method="POST">
-    <label for="event-name">Event Name:</label>
-    <input type="text" id="event-name" name="event-name" required><br>
+<!-- Modal -->
+<div id="bookingModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Event Booking Form</h2>
+    <form action="#" method="POST">
+      <h3>1. Basic Event Details</h3>
+      <label for="event-type">Event Type:</label>
+      <select id="event-type" name="event-type" required>
+        <option value="sporting">Sporting Event</option>
+        <option value="concert">Concert</option>
+        <option value="trade-show">Trade Show</option>
+        <option value="community">Community Event</option>
+        <option value="private">Private Event</option>
+      </select><br>
 
-    <label for="event-date">Event Date:</label>
-    <input type="date" id="event-date" name="event-date" required><br>
+      <label for="event-date">Event Date and Time:</label>
+      <input type="datetime-local" id="event-date" name="event-date" required><br>
 
-    <label for="event-type">Event Type:</label>
-    <select id="event-type" name="event-type" required>
-      <option value="sporting">Sporting Event</option>
-      <option value="concert">Concert</option>
-      <option value="trade-show">Trade Show</option>
-      <option value="community">Community Event</option>
-      <option value="private">Private Event</option>
-    </select><br>
+      <label for="event-duration">Event Duration (hours):</label>
+      <input type="number" id="event-duration" name="event-duration" required><br>
 
-    <label for="contact-info">Your Contact Information:</label>
-    <input type="email" id="contact-info" name="contact-info" placeholder="Email" required><br>
+      <label for="expected-attendees">Expected Attendees:</label>
+      <input type="number" id="expected-attendees" name="expected-attendees" required><br>
 
-    <button type="submit" class="button">Submit Booking Request</button>
-  </form>
-</section>
+      <h3>2. Contact Information</h3>
+      <label for="contact-person">Primary Contact Person:</label>
+      <input type="text" id="contact-person" name="contact-person" required><br>
+
+      <label for="contact-phone">Phone Number:</label>
+      <input type="tel" id="contact-phone" name="contact-phone" required><br>
+
+      <label for="contact-email">Email Address:</label>
+      <input type="email" id="contact-email" name="contact-email" required><br>
+
+      <h3>3. Setup and Logistics</h3>
+      <label for="setup-time">Required Setup Time:</label>
+      <input type="number" id="setup-time" name="setup-time" required><br>
+
+      <label for="cleanup-time">Required Cleanup Time:</label>
+      <input type="number" id="cleanup-time" name="cleanup-time" required><br>
+
+      <label for="furniture">Do you need tables, chairs, or other furniture?</label>
+      <input type="text" id="furniture" name="furniture"><br>
+
+      <label for="stage">Do you need a stage or platform?</label>
+      <input type="text" id="stage" name="stage"><br>
+
+      <h3>4. Equipment and Technology</h3>
+      <label for="sound-system">Do you need access to a sound system or microphones?</label>
+      <input type="checkbox" id="sound-system" name="sound-system"><br>
+
+      <label for="projector">Will you require a projector or screens?</label>
+      <input type="checkbox" id="projector" name="projector"><br>
+
+      <label for="lighting">Do you need lighting equipment?</label>
+      <input type="checkbox" id="lighting" name="lighting"><br>
+
+      <label for="wifi">Do you need Wi-Fi access?</label>
+      <input type="checkbox" id="wifi" name="wifi"><br>
+
+      <h3>5. Seating and Space Requirements</h3>
+      <label for="seating-arrangement">Do you need a specific seating arrangement?</label>
+      <input type="text" id="seating-arrangement" name="seating-arrangement"><br>
+
+      <label for="seating-chart">Will you need a seating chart?</label>
+      <input type="checkbox" id="seating-chart" name="seating-chart"><br>
+
+      <label for="accessibility">Any special accessibility requirements?</label>
+      <input type="text" id="accessibility" name="accessibility"><br>
+
+      <h3>6. Catering and Food</h3>
+      <label for="food">Will you be providing food or drinks?</label>
+      <input type="checkbox" id="food" name="food"><br>
+
+      <label for="catering">Do you need catering services?</label>
+      <input type="checkbox" id="catering" name="catering"><br>
+
+      <label for="alcohol">Will alcohol be served? (requires permits)</label>
+      <input type="checkbox" id="alcohol" name="alcohol"><br>
+
+      <h3>7. Vendors and Third-Party Services</h3>
+      <label for="vendors">Are there any vendors or sponsors involved?</label>
+      <input type="text" id="vendors" name="vendors"><br>
+
+      <label for="loading-dock">Do you need a loading dock for vendor equipment?</label>
+      <input type="checkbox" id="loading-dock" name="loading-dock"><br>
+
+      <h3>8. Security and Safety</h3>
+      <label for="security">Will you need security personnel?</label>
+      <input type="checkbox" id="security" name="security"><br>
+
+      <label for="insurance">Do you have liability insurance for the event?</label>
+      <input type="checkbox" id="insurance" name="insurance"><br>
+
+      <label for="first-aid">Do you need first aid or medical staff on-site?</label>
+      <input type="checkbox" id="first-aid" name="first-aid"><br>
+
+      <h3>9. Marketing and Promotion</h3>
+      <label for="banners">Will there be banners or signage?</label>
+      <input type="checkbox" id="banners" name="banners"><br>
+
+      <label for="ticket-sales">Do you need permission to sell tickets or merchandise?</label>
+      <input type="checkbox" id="ticket-sales" name="ticket-sales"><br>
+
+      <h3>10. Special Requests and Agreements</h3>
+      <label for="special-requests">Any special requests or accommodations needed?</label>
+      <input type="text" id="special-requests" name="special-requests"><br>
+
+      <label for="terms">Do you agree to the terms and conditions for using the facility?</label>
+      <input type="checkbox" id="terms" name="terms" required><br>
+
+      <button type="submit" class="button">Submit Booking Request</button>
+    </form>
+  </div>
+</div>
 
 <footer>
   <p>&copy; 2024 School Arena. All Rights Reserved.</p>
 </footer>
+
+<script src="reserve.js"></script>
 </body>
 </html>

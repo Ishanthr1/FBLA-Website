@@ -20,15 +20,20 @@
         <li><a href="reserve.html">Reservation</a></li>
       </ul>
     </nav>
-  </div>
-
-  <div class="menu-toggle" onclick="toggleMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </div>
 </header>
 
+<script>
+  function toggleMenu() {
+    const nav = document.querySelector('nav ul');
+    nav.classList.toggle('active');
+  }
+</script>
 
 <section class="hero">
   <div class="hero-content">
@@ -50,7 +55,7 @@
       <p>From concerts to championships, there's something for everyone.</p>
     </div>
     <div class="card">
-      <h3>Seamless Booking</h3>
+        <h3>Seamless Booking</h3>
       <p>Our hassle-free ticketing system makes booking a breeze.</p>
     </div>
   </div>
@@ -66,16 +71,10 @@
     <button type="submit">Subscribe</button>
   </form>
 </section>
-<script>
-  function toggleMenu() {
-    const nav = document.querySelector('nav ul');
-    nav.classList.toggle('active');
-  }
-</script>
 
 <footer>
   <div class="footer-container">
-    <p>&copy; 2024 School Arena. All rights reserved.</p>
+    <p>&copy; 2024 Hillcrest High Gym. All rights reserved.</p>
   </div>
 </footer>
 </body>
