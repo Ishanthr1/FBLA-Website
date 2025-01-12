@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta tag for character set -->
   <meta charset="UTF-8">
+
+  <!-- Meta tag for viewport to ensure responsive design -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Title of the webpage -->
   <title>Arena Rental - Reserve Your Event</title>
+
+  <!-- Link to external CSS for styling the page -->
   <link rel="stylesheet" href="reserve.css">
+
+  <!-- Google font for Poppins style -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<!-- Header section of the page -->
 <header>
   <div class="header-container">
+    <!-- Site Title and Navigation links -->
     <h1><a href="home.html" class="title-link">Hillcrest High Gym</a></h1>
     <nav>
       <ul>
+        <!-- Navigation links to different pages -->
         <li><a href="calendar.html">Events Calendar</a></li>
         <li><a href="events.html">Explore Events</a></li>
         <li><a href="buy-tickets.html">Box Office</a></li>
@@ -23,8 +36,12 @@
   </div>
 </header>
 
+<!-- Information Section about Arena Rental -->
 <section class="info-section">
+  <!-- Heading for the section -->
   <h2>Arena Rental Information</h2>
+
+  <!-- Brief introduction and event types -->
   <p>Our versatile gymnasium is available for rent for various events, including:</p>
   <ul>
     <li>Local Sporting Events</li>
@@ -33,6 +50,8 @@
     <li>Community Gatherings</li>
     <li>Private Events</li>
   </ul>
+
+  <!-- Rental details for the arena -->
   <h3>Rental Details</h3>
   <p>Our arena is equipped with:</p>
   <ul>
@@ -41,13 +60,18 @@
     <li>State-of-the-art flooring suitable for various sports</li>
     <li>Ample parking space</li>
   </ul>
+
+  <!-- Information on rental costs -->
   <h3>Rental Costs</h3>
   <p>Rental fees vary based on the event type and duration. Please contact us for a personalized quote. We offer flexible packages to suit your needs.</p>
+
+  <!-- Information on the booking process -->
   <h3>Booking Process</h3>
   <p>To reserve the arena for your event, please click the button below to fill out the booking form.</p>
   <button id="openModal">Book Now</button>
 </section>
 
+<!-- Contact Information Section -->
 <section class="contact-section">
   <h2>Contact Information</h2>
   <p>If you have any questions or would like to book the arena, please get in touch:</p>
@@ -58,13 +82,20 @@
   </ul>
 </section>
 
-<!-- Modal -->
+<!-- Modal for the booking form -->
 <div id="bookingModal" class="modal">
   <div class="modal-content">
+    <!-- Close button for the modal -->
     <span class="close">&times;</span>
+
+    <!-- Booking Form Heading -->
     <h2>Event Booking Form</h2>
+
+    <!-- Form to gather event details -->
     <form action="#" method="POST">
       <h3>1. Basic Event Details</h3>
+
+      <!-- Dropdown for event type -->
       <label for="event-type">Event Type:</label>
       <select id="event-type" name="event-type" required>
         <option value="sporting">Sporting Event</option>
@@ -74,16 +105,21 @@
         <option value="private">Private Event</option>
       </select><br>
 
+      <!-- Input for event date and time -->
       <label for="event-date">Event Date and Time:</label>
       <input type="datetime-local" id="event-date" name="event-date" required><br>
 
+      <!-- Input for event duration -->
       <label for="event-duration">Event Duration (hours):</label>
       <input type="number" id="event-duration" name="event-duration" required><br>
 
+      <!-- Input for expected number of attendees -->
       <label for="expected-attendees">Expected Attendees:</label>
       <input type="number" id="expected-attendees" name="expected-attendees" required><br>
 
       <h3>2. Contact Information</h3>
+
+      <!-- Input for primary contact details -->
       <label for="contact-person">Primary Contact Person:</label>
       <input type="text" id="contact-person" name="contact-person" required><br>
 
@@ -94,6 +130,8 @@
       <input type="email" id="contact-email" name="contact-email" required><br>
 
       <h3>3. Setup and Logistics</h3>
+
+      <!-- Input for setup and cleanup time -->
       <label for="setup-time">Required Setup Time:</label>
       <input type="number" id="setup-time" name="setup-time" required><br>
 
@@ -107,6 +145,8 @@
       <input type="text" id="stage" name="stage"><br>
 
       <h3>4. Equipment and Technology</h3>
+
+      <!-- Checkbox for equipment needs -->
       <label for="sound-system">Do you need access to a sound system or microphones?</label>
       <input type="checkbox" id="sound-system" name="sound-system"><br>
 
@@ -120,6 +160,8 @@
       <input type="checkbox" id="wifi" name="wifi"><br>
 
       <h3>5. Seating and Space Requirements</h3>
+
+      <!-- Input for seating arrangements and requirements -->
       <label for="seating-arrangement">Do you need a specific seating arrangement?</label>
       <input type="text" id="seating-arrangement" name="seating-arrangement"><br>
 
@@ -130,6 +172,8 @@
       <input type="text" id="accessibility" name="accessibility"><br>
 
       <h3>6. Catering and Food</h3>
+
+      <!-- Checkbox for catering and food-related requirements -->
       <label for="food">Will you be providing food or drinks?</label>
       <input type="checkbox" id="food" name="food"><br>
 
@@ -140,6 +184,8 @@
       <input type="checkbox" id="alcohol" name="alcohol"><br>
 
       <h3>7. Vendors and Third-Party Services</h3>
+
+      <!-- Input for vendor or sponsor information -->
       <label for="vendors">Are there any vendors or sponsors involved?</label>
       <input type="text" id="vendors" name="vendors"><br>
 
@@ -147,6 +193,8 @@
       <input type="checkbox" id="loading-dock" name="loading-dock"><br>
 
       <h3>8. Security and Safety</h3>
+
+      <!-- Checkbox for security and safety-related options -->
       <label for="security">Will you need security personnel?</label>
       <input type="checkbox" id="security" name="security"><br>
 
@@ -157,6 +205,8 @@
       <input type="checkbox" id="first-aid" name="first-aid"><br>
 
       <h3>9. Marketing and Promotion</h3>
+
+      <!-- Checkbox for marketing and promotional requirements -->
       <label for="banners">Will there be banners or signage?</label>
       <input type="checkbox" id="banners" name="banners"><br>
 
@@ -164,21 +214,28 @@
       <input type="checkbox" id="ticket-sales" name="ticket-sales"><br>
 
       <h3>10. Special Requests and Agreements</h3>
+
+      <!-- Input for any special requests -->
       <label for="special-requests">Any special requests or accommodations needed?</label>
       <input type="text" id="special-requests" name="special-requests"><br>
 
+      <!-- Checkbox for agreeing to terms and conditions -->
       <label for="terms">Do you agree to the terms and conditions for using the facility?</label>
       <input type="checkbox" id="terms" name="terms" required><br>
 
+      <!-- Submit button for the form -->
       <button type="submit" class="button">Submit Booking Request</button>
     </form>
   </div>
 </div>
 
+<!-- Footer section -->
 <footer>
   <p>&copy; 2024 School Arena. All Rights Reserved.</p>
 </footer>
 
+<!-- Link to external JavaScript for handling interactions -->
 <script src="reserve.js"></script>
+
 </body>
 </html>

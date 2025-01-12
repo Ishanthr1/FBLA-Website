@@ -4,13 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hillcrest High Gym - Home</title>
+  <!-- Link to the external stylesheet for custom styling -->
   <link rel="stylesheet" href="home.css">
+  <!-- Google Font for a consistent, modern look -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
   <div class="header-container">
+    <!-- Website title, clickable link to home -->
     <h1><a href="home.html" class="title-link">Hillcrest High Gym</a></h1>
+    <!-- Navigation bar -->
     <nav>
       <ul>
         <li><a href="calendar.html">Events Calendar</a></li>
@@ -20,6 +24,7 @@
         <li><a href="reserve.html">Reservation</a></li>
       </ul>
     </nav>
+    <!-- Mobile menu toggle button -->
     <div class="menu-toggle" onclick="toggleMenu()">
       <div></div>
       <div></div>
@@ -30,6 +35,7 @@
 
 <section class="hero">
   <div class="hero-content">
+    <!-- Hero section: headline and call-to-action button -->
     <h2>Welcome to Hillcrest High Arena</h2>
     <p>Your one-stop destination for events, entertainment, and excitement!</p>
     <a href="buy-tickets.html" class="cta-button">Get Tickets Now</a>
@@ -38,7 +44,9 @@
 
 <section class="features">
   <h2>Why Choose Us?</h2>
+  <!-- Feature cards section -->
   <div class="feature-cards">
+    <!-- Individual feature card with tilt effect -->
     <div class="tilt-container">
       <div class="card">
         <h3>State-of-the-Art Arena</h3>
@@ -62,6 +70,7 @@
 
 <section class="newsletter">
   <h2>Stay Updated</h2>
+  <!-- Newsletter subscription form -->
   <p>Subscribe to our newsletter for the latest updates and exclusive offers.</p>
   <form>
     <label>
@@ -72,29 +81,35 @@
 </section>
 
 <script>
+  /**
+   * Toggles the mobile navigation menu visibility.
+   */
   function toggleMenu() {
     const nav = document.querySelector('nav ul');
-    nav.classList.toggle('active');
+    nav.classList.toggle('active'); // Adds or removes the 'active' class
   }
+
+  // Add tilt effect to feature cards
   const tiltContainers = document.querySelectorAll('.tilt-container');
 
   tiltContainers.forEach(container => {
     container.addEventListener('mousemove', (e) => {
       const card = container.querySelector('.card');
       const rect = container.getBoundingClientRect();
-      const offsetX = e.clientX - rect.left;
-      const offsetY = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      const deltaX = (offsetX - centerX) / centerX;
-      const deltaY = (offsetY - centerY) / centerY;
+      const offsetX = e.clientX - rect.left; // Mouse X position within the container
+      const offsetY = e.clientY - rect.top;  // Mouse Y position within the container
+      const centerX = rect.width / 2;       // Center X of the container
+      const centerY = rect.height / 2;      // Center Y of the container
+      const deltaX = (offsetX - centerX) / centerX; // Calculate X-axis tilt ratio
+      const deltaY = (offsetY - centerY) / centerY; // Calculate Y-axis tilt ratio
 
-      const rotateX = deltaY * 15; // Adjust the strength of the tilt on the X-axis
-      const rotateY = deltaX * -15; // Adjust the strength of the tilt on the Y-axis
-
+      // Apply rotation based on mouse movement
+      const rotateX = deltaY * 15;
+      const rotateY = deltaX * -15;
       card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     });
 
+    // Reset tilt effect when the mouse leaves the container
     container.addEventListener('mouseleave', () => {
       const card = container.querySelector('.card');
       card.style.transform = 'rotateX(0) rotateY(0)';
@@ -104,14 +119,9 @@
 
 <footer>
   <div class="footer-container">
+    <!-- Footer section with copyright notice -->
     <p>&copy; 2024 Hillcrest High Gym. All rights reserved.</p>
   </div>
 </footer>
 </body>
 </html>
-
-
-
-
-
-

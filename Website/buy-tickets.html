@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Box Office</title>
+    <!-- External Fonts -->
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Inline CSS Styles -->
     <style>
+        /* General styles for body and elements */
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f0f9f4;
             margin: 0;
             padding: 0;
         }
+        /* Header styles */
 
         a {
             text-decoration: none;
@@ -46,6 +52,7 @@
         .title-link:hover {
             color: #a5d6a7;
         }
+        /* Navigation and hover effects */
 
         nav ul {
             list-style: none;
@@ -76,6 +83,7 @@
             color: #006400;
             margin-bottom: 10px;
         }
+        /* Event card styles */
 
         .event {
             background-color: #ffffff;
@@ -106,6 +114,7 @@
             color: #fff;
             transform: scale(1.1);
         }
+        /* Sidebar styles */
 
         .sidebar {
             position: fixed;
@@ -143,7 +152,7 @@
             margin: 20px 0;
             text-align: center;
         }
-
+        /* Seat chart and modal styles */
         .seat {
             display: inline-block;
             width: 30px;
@@ -228,7 +237,7 @@
     </style>
 </head>
 <body>
-
+<!-- Header Section -->
 <header>
     <div class="header-container">
         <h1><a href="home.html" class="title-link">Hillcrest High Gym</a></h1>
@@ -245,6 +254,7 @@
 </header>
 
 <div class="container">
+    <!-- Events Section -->
     <h2>Events</h2>
     <div class="event">
         <h2>High School Basketball Championship</h2>
@@ -264,7 +274,7 @@
     </div>
 </div>
 
-
+<!-- Sidebar for ticket selection -->
 <div class="sidebar">
     <h2>Ticket Selection</h2>
 
@@ -367,132 +377,133 @@
 <div class="overlay"></div>
 
 <script>
-    const tierPrices = {
-        1: 25,
-        2: 20,
-        3: 15
+    // JavaScript to handle dynamic interactions, seat selection, and modal dialogs
+const tierPrices = {
+    1: 25,
+    2: 20,
+    3: 15
+};
+
+const taxRate = 0.08;
+
+let numPeople = 0;
+let section = 0;
+let row = 0;
+let selectedSeats = [];
+
+document.querySelectorAll('.time').forEach(timeSlot => {
+    timeSlot.addEventListener('click', () => {
+        document.querySelector('.sidebar').style.display = 'block';
+    });
+});
+
+document.querySelectorAll('.time').forEach(timeSlot => {
+    timeSlot.addEventListener('click', () => {
+        const sidebar = document.querySelector('.sidebar');
+        document.querySelector('.overlay').style.display = 'block';
+        sidebar.classList.add('open'); // Add the 'open' class to slide the sidebar in
+    });
+});
+
+// Close the sidebar when clicking outside
+document.addEventListener('click', (event) => {
+    const sidebar = document.querySelector('.sidebar');
+    const timeSlots = document.querySelectorAll('.time');
+
+    if (
+    !sidebar.contains(event.target) &&
+    !Array.from(timeSlots).some(timeSlot => timeSlot.contains(event.target))
+    ) {
+        sidebar.classList.remove('open'); // Remove the 'open' class to slide the sidebar out
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.overlay');
+    const openBtn = document.querySelector('.open-btn');
+    const closeBtn = document.querySelector('.close-btn');
+
+    // Open Sidebar
+    openBtn.addEventListener('click', () => {
+        sidebar.classList.add('open');
+        overlay.classList.add('visible');
+    });
+
+    // Close Sidebar
+    const closeSidebar = () => {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('visible');
     };
 
-    const taxRate = 0.08;
+    closeBtn.addEventListener('click', closeSidebar);
+    overlay.addEventListener('click', closeSidebar);
+});
 
-    let numPeople = 0;
-    let section = 0;
-    let row = 0;
-    let selectedSeats = [];
+document.getElementById('openModal').addEventListener('click', () => {
+    numPeople = parseInt(document.getElementById('people').value);
+    section = parseInt(document.getElementById('section').value);
+    row = parseInt(document.getElementById('row').value);
+    if (numPeople > 0 && numPeople <= 17) {
+        generateSeats();
+        document.getElementById('seatModal').style.display = 'block';
+        document.querySelector('.overlay').style.display = 'block';
+    } else {
+        alert('Please enter a valid number of people (1-17).');
+    }
+});
 
-    document.querySelectorAll('.time').forEach(timeSlot => {
-        timeSlot.addEventListener('click', () => {
-            document.querySelector('.sidebar').style.display = 'block';
-        });
-    });
+function generateSeats() {
+    const seatsInRow = section <= 8 ? 10 : section <= 18 ? 13 : 12;
+    document.getElementById('seatSelection').innerHTML = '';
 
-    document.querySelectorAll('.time').forEach(timeSlot => {
-        timeSlot.addEventListener('click', () => {
-            const sidebar = document.querySelector('.sidebar');
-            document.querySelector('.overlay').style.display = 'block';
-            sidebar.classList.add('open'); // Add the 'open' class to slide the sidebar in
-        });
-    });
-
-    // Close the sidebar when clicking outside
-    document.addEventListener('click', (event) => {
-        const sidebar = document.querySelector('.sidebar');
-        const timeSlots = document.querySelectorAll('.time');
-
-        if (
-        !sidebar.contains(event.target) &&
-        !Array.from(timeSlots).some(timeSlot => timeSlot.contains(event.target))
-        ) {
-            sidebar.classList.remove('open'); // Remove the 'open' class to slide the sidebar out
-        }
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const sidebar = document.querySelector('.sidebar');
-        const overlay = document.querySelector('.overlay');
-        const openBtn = document.querySelector('.open-btn');
-        const closeBtn = document.querySelector('.close-btn');
-
-        // Open Sidebar
-        openBtn.addEventListener('click', () => {
-            sidebar.classList.add('open');
-            overlay.classList.add('visible');
-        });
-
-        // Close Sidebar
-        const closeSidebar = () => {
-            sidebar.classList.remove('open');
-            overlay.classList.remove('visible');
-        };
-
-        closeBtn.addEventListener('click', closeSidebar);
-        overlay.addEventListener('click', closeSidebar);
-    });
-
-    document.getElementById('openModal').addEventListener('click', () => {
-        numPeople = parseInt(document.getElementById('people').value);
-        section = parseInt(document.getElementById('section').value);
-        row = parseInt(document.getElementById('row').value);
-        if (numPeople > 0 && numPeople <= 17) {
-            generateSeats();
-            document.getElementById('seatModal').style.display = 'block';
-            document.querySelector('.overlay').style.display = 'block';
-        } else {
-            alert('Please enter a valid number of people (1-17).');
-        }
-    });
-
-    function generateSeats() {
-        const seatsInRow = section <= 8 ? 10 : section <= 18 ? 13 : 12;
-        document.getElementById('seatSelection').innerHTML = '';
-
-        for (let i = 0; i < seatsInRow; i++) {
-            const seat = document.createElement('div');
-            seat.classList.add('seat');
-            seat.dataset.seatId = i;
-            seat.addEventListener('click', () => selectSeat(i));
-            document.getElementById('seatSelection').appendChild(seat);
-        }
-
-        const tier = section <= 26 ? 3 : section <= 36 ? 2 : 1;
-        const pricePerSeat = tierPrices[tier];
-        const totalPrice = pricePerSeat * numPeople * (1 + taxRate);  // Add tax
-        document.getElementById('totalPrice').textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+    for (let i = 0; i < seatsInRow; i++) {
+        const seat = document.createElement('div');
+        seat.classList.add('seat');
+        seat.dataset.seatId = i;
+        seat.addEventListener('click', () => selectSeat(i));
+        document.getElementById('seatSelection').appendChild(seat);
     }
 
-    function selectSeat(seatId) {
-        if (selectedSeats.length < numPeople) {
-            const seat = document.querySelector(`.seat[data-seat-id="${seatId}"]`);
-            seat.classList.toggle('selected');
-            if (seat.classList.contains('selected')) {
-                selectedSeats.push(seatId);
-            } else {
-                selectedSeats = selectedSeats.filter(id => id !== seatId);
-            }
+    const tier = section <= 26 ? 3 : section <= 36 ? 2 : 1;
+    const pricePerSeat = tierPrices[tier];
+    const totalPrice = pricePerSeat * numPeople * (1 + taxRate);  // Add tax
+    document.getElementById('totalPrice').textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+}
+
+function selectSeat(seatId) {
+    if (selectedSeats.length < numPeople) {
+        const seat = document.querySelector(`.seat[data-seat-id="${seatId}"]`);
+        seat.classList.toggle('selected');
+        if (seat.classList.contains('selected')) {
+            selectedSeats.push(seatId);
+        } else {
+            selectedSeats = selectedSeats.filter(id => id !== seatId);
         }
     }
+}
 
-    document.getElementById('confirmSelection').addEventListener('click', () => {
-        if (selectedSeats.length === numPeople) {
-            document.getElementById('seatModal').style.display = 'none';
-            document.getElementById('paymentModal').style.display = 'block';
-        } else {
-            alert('Please select the correct number of seats.');
-        }
-    });
-
-    document.querySelector('.overlay').addEventListener('click', () => {
+document.getElementById('confirmSelection').addEventListener('click', () => {
+    if (selectedSeats.length === numPeople) {
         document.getElementById('seatModal').style.display = 'none';
-        document.getElementById('paymentModal').style.display = 'none';
-        document.querySelector('.overlay').style.display = 'none';
-    });
+        document.getElementById('paymentModal').style.display = 'block';
+    } else {
+        alert('Please select the correct number of seats.');
+    }
+});
 
-    document.querySelector('#paymentModal form').addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Payment Submitted!');
-        document.getElementById('paymentModal').style.display = 'none';
-        document.querySelector('.overlay').style.display = 'none';
-    });
+document.querySelector('.overlay').addEventListener('click', () => {
+    document.getElementById('seatModal').style.display = 'none';
+    document.getElementById('paymentModal').style.display = 'none';
+    document.querySelector('.overlay').style.display = 'none';
+});
+
+document.querySelector('#paymentModal form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Payment Submitted!');
+    document.getElementById('paymentModal').style.display = 'none';
+    document.querySelector('.overlay').style.display = 'none';
+});
 </script>
 
 </body>

@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore Events</title>
+    <!-- Link to external CSS file for styling -->
     <link rel="stylesheet" href="events.css">
+    <!-- Import Google Fonts for consistent typography -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
     <div class="header-container">
+        <!-- Website title linking to the home page -->
         <h1><a href="home.html" class="title-link">Hillcrest High Gym</a></h1>
+        <!-- Navigation bar with links to different sections of the site -->
         <nav>
             <ul>
                 <li><a href="calendar.html">Events Calendar</a></li>
@@ -24,6 +28,7 @@
 </header>
 
 <section id="event-list">
+    <!-- Section displaying individual event cards -->
     <div class="event-card" data-url="buy-tickets.html">
         <h2>High School Basketball Championship</h2>
         <p>Date: December 1, 2024</p>
@@ -51,15 +56,18 @@
 </section>
 
 <footer>
+    <!-- Footer with copyright information -->
     <p>&copy; 2024 School Arena. All rights reserved.</p>
 </footer>
 
 <script>
+    // JavaScript to enable click functionality on event cards
     document.querySelectorAll('.event-card').forEach(card => {
+        // Add a click event listener to each event card
         card.addEventListener('click', () => {
-            const url = card.getAttribute('data-url');
+            const url = card.getAttribute('data-url'); // Get the URL from the data-url attribute
             if (url) {
-                window.location.href = url;
+                window.location.href = url; // Redirect to the specified URL
             }
         });
     });
