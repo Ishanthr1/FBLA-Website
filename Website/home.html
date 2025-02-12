@@ -4,73 +4,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hillcrest High Gym - Home</title>
-  <!-- Link to the external stylesheet for custom styling -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="home.css">
-  <!-- Google Font for a consistent, modern look -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
-  <div class="header-container">
-    <!-- Website title, clickable link to home -->
-    <h1><a href="home.html" class="title-link">Hillcrest High Gym</a></h1>
-    <!-- Navigation bar -->
-    <nav>
-      <ul>
-        <li><a href="calendar.html">Events Calendar</a></li>
-        <li><a href="events.html">Explore Events</a></li>
-        <li><a href="buy-tickets.html">Box Office</a></li>
-        <li><a href="infopage.html">Information</a></li>
-        <li><a href="reserve.html">Reservation</a></li>
-      </ul>
-    </nav>
-    <!-- Mobile menu toggle button -->
+  <div  class="top-bar">
+    <div class="left">
+      <a href="home.html">
+        <img src="https://sportshub2-uploads.vnn-prod.zone/files/sites/1885/2019/08/20105418/image001.png" alt="Hillcrest Huskies Logo" class="logo">
+      </a>
+      <span class="team-name">HILLCREST HUSKIES</span>
+    </div>
+    <div class="right">
+      <a target="_blank" href="https://translate.google.com/translate?sl=en&tl=es&u=https%3A%2F%2Fhillcresthighgym.netlify.app%2F">
+        <img src="https://i.imgur.com/QX8arz5.png" alt="Language" class="language-icon">
+      </a>
+      <span class="divider">|</span>
+    </div>
+  </div>
+  <nav>
     <div class="menu-toggle" onclick="toggleMenu()">
       <div></div>
       <div></div>
       <div></div>
     </div>
-  </div>
+    <ul class="nav-links">
+      <li><a href="calendar.html">Events Calendar</a></li>
+      <li><a href="events.html">Explore Events</a></li>
+      <li><a href="buy-tickets.html">Box Office</a></li>
+      <li><a href="infopage.html">Information</a></li>
+      <li><a href="reserve.html">Reservation</a></li>
+    </ul>
+  </nav>
 </header>
 
 <section class="hero">
   <div class="hero-content">
-    <!-- Hero section: headline and call-to-action button -->
-    <h2>Welcome to Hillcrest High Arena</h2>
-    <p>Your one-stop destination for events, entertainment, and excitement!</p>
+    <h2 class="glow-text">Welcome to Husky's Legacy Arena</h2>
+    <p class="glow-text">Where Every Event Makes Memories!</p>
     <a href="buy-tickets.html" class="cta-button">Get Tickets Now</a>
   </div>
 </section>
 
 <section class="features">
   <h2>Why Choose Us?</h2>
-  <!-- Feature cards section -->
   <div class="feature-cards">
-    <!-- Individual feature card with tilt effect -->
-    <div class="tilt-container">
-      <div class="card">
-        <h3>State-of-the-Art Arena</h3>
-        <p>Experience world-class facilities designed for your comfort and enjoyment.</p>
-      </div>
+    <div class="card">
+      <h3>State-of-the-Art Arena</h3>
+      <p>Experience world-class facilities designed for your comfort and enjoyment.</p>
     </div>
-    <div class="tilt-container">
-      <div class="card">
-        <h3>Exciting Events</h3>
-        <p>From concerts to championships, there's something for everyone.</p>
-      </div>
+    <div class="card">
+      <h3>Exciting Events</h3>
+      <p>From concerts to championships, there's something for everyone.</p>
     </div>
-    <div class="tilt-container">
-      <div class="card">
-        <h3>Seamless Booking</h3>
-        <p>Our hassle-free ticketing system makes booking a breeze.</p>
-      </div>
+    <div class="card">
+      <h3>Seamless Booking</h3>
+      <p>Our hassle-free ticketing system makes booking a breeze.</p>
     </div>
   </div>
 </section>
 
 <section class="newsletter">
   <h2>Stay Updated</h2>
-  <!-- Newsletter subscription form -->
   <p>Subscribe to our newsletter for the latest updates and exclusive offers.</p>
   <form>
     <label>
@@ -81,45 +78,13 @@
 </section>
 
 <script>
-  /**
-   * Toggles the mobile navigation menu visibility.
-   */
   function toggleMenu() {
-    const nav = document.querySelector('nav ul');
-    nav.classList.toggle('active'); // Adds or removes the 'active' class
+    document.querySelector('.nav-links').classList.toggle('show');
   }
-
-  // Add tilt effect to feature cards
-  const tiltContainers = document.querySelectorAll('.tilt-container');
-
-  tiltContainers.forEach(container => {
-    container.addEventListener('mousemove', (e) => {
-      const card = container.querySelector('.card');
-      const rect = container.getBoundingClientRect();
-      const offsetX = e.clientX - rect.left; // Mouse X position within the container
-      const offsetY = e.clientY - rect.top;  // Mouse Y position within the container
-      const centerX = rect.width / 2;       // Center X of the container
-      const centerY = rect.height / 2;      // Center Y of the container
-      const deltaX = (offsetX - centerX) / centerX; // Calculate X-axis tilt ratio
-      const deltaY = (offsetY - centerY) / centerY; // Calculate Y-axis tilt ratio
-
-      // Apply rotation based on mouse movement
-      const rotateX = deltaY * 15;
-      const rotateY = deltaX * -15;
-      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
-
-    // Reset tilt effect when the mouse leaves the container
-    container.addEventListener('mouseleave', () => {
-      const card = container.querySelector('.card');
-      card.style.transform = 'rotateX(0) rotateY(0)';
-    });
-  });
 </script>
 
 <footer>
   <div class="footer-container">
-    <!-- Footer section with copyright notice -->
     <p>&copy; 2024 Hillcrest High Gym. All rights reserved.</p>
   </div>
 </footer>
