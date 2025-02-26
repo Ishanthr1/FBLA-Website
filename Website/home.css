@@ -232,12 +232,12 @@ nav {
 .features {
     padding: 50px 20px;
     text-align: center;
-    background: #e8f5e9;
+    background: #388e3c;
 }
 
 .features h2 {
     font-size: 2rem;
-    color: #2e7d32;
+    color: #ffffff;
     margin-bottom: 30px;
 }
 
@@ -282,7 +282,7 @@ nav {
 
 /* Newsletter Section */
 .newsletter {
-    background: #388e3c;
+    background: #111111;
     color: #fff;
     padding: 30px 20px;
     text-align: center;
@@ -323,13 +323,14 @@ nav {
 
 /* Footer */
 footer {
-    background: #2e7d32;
-    color: #fff;
+    background: #ffffff;
+    color: #111111;
     padding: 15px 0;
     text-align: center;
 }
 
 .footer-container {
+
     max-width: 1200px;
     margin: 0 auto;
 }
