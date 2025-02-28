@@ -24,53 +24,117 @@
             color: inherit;
         }
 
+
+
+        /* Header Styling */
         header {
-            background-color: #2e7d32;
-            padding: 15px 0;
             position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
         }
 
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
+        /* Top Bar */
+        .top-bar {
+            position: sticky;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
+            background-color: white;
+            padding: 10px 30px;
+            border-bottom: 3px solid #4CAF50; /* Green accent line */
         }
 
-        .title-link {
-            font-size: 2rem;
-            font-weight: 600;
-            color: #fff;
+        /* Left Section (Logo & Name) */
+        .left {
+            position: sticky;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo {
+            position: sticky;
+            width: 80px;
+            height: auto;
+        }
+
+        .team-name {
+            position: sticky;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: black;
+        }
+
+        /* Right Section (Links & Icons) */
+        .right {
+            position: sticky;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .right a {
+            text-decoration: none;
+            color: black;
+            font-size: 1rem;
+            font-weight: 500;
             transition: color 0.3s ease;
         }
 
-        .title-link:hover {
-            color: #a5d6a7;
+        .right a:hover {
+            color: #4CAF50;
         }
-        /* Navigation and hover effects */
 
-        nav ul {
+        .divider {
+            font-size: 1.2rem;
+            color: #4CAF50;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            padding: 0px 0px;
+        }
+
+        .nav-links {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 30px;
         }
 
-        nav ul li a {
-            color: #fff;
-            padding: 10px 15px;
+        .nav-links li a {
+            color: white;
             font-size: 1rem;
-            transition: background 0.3s ease, color 0.3s ease;
+            font-weight: 500;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            transition: color 0.3s ease;
         }
 
-        nav ul li a:hover {
-            background: #1b5e20;
-            border-radius: 5px;
-            color: #a5d6a7;
+        .nav-links li a:hover {
+            color: #4CAF50;
+        }
+
+        .language-icon {
+            width: 30px; /* Adjust size */
+            height: auto;
+            cursor: pointer;
+        }
+
+        /* Mobile Responsive Navigation */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
         }
 
         .container {
@@ -239,18 +303,34 @@
 <body>
 <!-- Header Section -->
 <header>
-    <div class="header-container">
-        <h1><a href="home.html" class="title-link">Hillcrest High Gym</a></h1>
-        <nav>
-            <ul>
-                <li><a href="calendar.html">Events Calendar</a></li>
-                <li><a href="events.html">Explore Events</a></li>
-                <li><a href="buy-tickets.html">Box Office</a></li>
-                <li><a href="infopage.html">Information</a></li>
-                <li><a href="reserve.html">Reservation</a></li>
-            </ul>
-        </nav>
+    <div  class="top-bar">
+        <div class="left">
+            <a href="home.html">
+                <img src="https://sportshub2-uploads.vnn-prod.zone/files/sites/1885/2019/08/20105418/image001.png" alt="Hillcrest Huskies Logo" class="logo">
+            </a>
+            <span class="team-name">HILLCREST LEGACY ARENA</span>
+        </div>
+        <div class="right">
+            <a target="_blank" href="https://translate.google.com/translate?sl=en&tl=es&u=https%3A%2F%2Fhillcresthighgym.netlify.app%2F">
+                <img src="https://i.imgur.com/QX8arz5.png" alt="Language" class="language-icon">
+            </a>
+            <span class="divider">|</span>
+        </div>
     </div>
+    <nav>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="calendar.html">Events Calendar</a></li>
+            <li><a href="events.html">Explore Events</a></li>
+            <li><a href="buy-tickets.html">Box Office</a></li>
+            <li><a href="infopage.html">Information</a></li>
+            <li><a href="reserve.html">Reservation</a></li>
+        </ul>
+    </nav>
 </header>
 
 <div class="container">

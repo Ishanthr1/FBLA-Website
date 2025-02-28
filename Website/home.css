@@ -18,7 +18,7 @@ a {
 
 .glow-text {
     color: black; /* Text remains black */
-    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #000000, 0 0 20px #ffffff;
+    text-shadow: 0 0 1.5px #ffffff, 0 0 10px #ffffff, 0 0 15px #000000, 0 0 20px #ffffff;
 }
 
 /* Header Styling */
@@ -237,7 +237,7 @@ nav {
 
 .features h2 {
     font-size: 2rem;
-    color: #2e7d32;
+    color: #000000;
     margin-bottom: 30px;
 }
 
@@ -276,13 +276,13 @@ nav {
 }
 
 .card p {
-    color: #555;
+    color: #000000;
     font-size: 1rem;
 }
 
 /* Newsletter Section */
 .newsletter {
-    background: #388e3c;
+    background: url('https://i.imgur.com/AiQ5uZf.jpeg') no-repeat center center/cover;
     color: #fff;
     padding: 30px 20px;
     text-align: center;
@@ -323,9 +323,9 @@ nav {
 
 /* Footer */
 footer {
-    background: #2e7d32;
+    background: #2c2c2c;
     color: #fff;
-    padding: 15px 0;
+    padding: 0px 0;
     text-align: center;
 }
 
