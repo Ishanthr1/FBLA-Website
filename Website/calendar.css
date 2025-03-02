@@ -1,8 +1,12 @@
 /* General styles */
-body {
-    font-family: 'Poppins', sans-serif;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
     background-color: #f9f9f9;
     color: #333;
 }
@@ -83,7 +87,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     background-color: black;
-    padding: 0px 0px;
+    padding: 12px 30px;
 }
 
 .nav-links {
