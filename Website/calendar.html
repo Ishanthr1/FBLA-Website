@@ -41,40 +41,76 @@
 
 
 <!-- Main Section: Calendar with Event Details -->
-<section id="calendar-section">
-  <div class="calendar-header">
-    <h2>Upcoming Events</h2>
-    <p>Browse through our upcoming events and stay up to date with what's happening.</p>
-    <!-- Date Picker -->
-    <div class="date-picker">
-      <input type="month" id="month-picker" name="month-picker" onchange="navigateToMonth(event)">
+<div class="container">
+  <section id="calendar-section">
+    <div class="calendar-header">
+      <h2>Upcoming Events</h2>
+      <p>Browse through our upcoming events and stay up to date with what's happening.</p>
+      <!-- Date Picker -->
+      <div class="date-picker">
+        <input type="month" id="month-picker" name="month-picker" onchange="navigateToMonth(event)">
+      </div>
     </div>
-  </div>
 
-  <!-- Calendar Grid -->
-  <div id="calendarWrapper">
-    <div id="currentMonthLabel"></div>
-    <div id="calendarGrid"></div>
-
-    <!-- Navigation buttons for full calendar -->
-    <div class="calendar-navigation">
-      <button id="prevMonthButton" class="nav-button">Previous Month</button>
-      <button id="nextMonthButton" class="nav-button">Next Month</button>
+    <!-- Calendar Grid -->
+    <div id="calendarWrapper">
+      <div class="calendar-navigation">
+        <button id="prevMonthButton" class="nav-button" onclick="changeMonth(-1)">
+          &lt; <!-- Left arrow -->
+        </button>
+        <div id="currentMonthLabel"></div>
+        <button id="nextMonthButton" class="nav-button" onclick="changeMonth(1)">
+          &gt; <!-- Right arrow -->
+        </button>
+      </div>
+      <div id="calendarGrid"></div>
     </div>
-  </div>
-
-  <!-- Event List Below Calendar -->
-  <section class="event-list">
-    <h3>Upcoming Events</h3>
-    <ul>
-      <li><strong>High School Basketball Championship:</strong> Dec 1, 2024 - 6:00 PM</li>
-      <li><strong>Winter Concert:</strong> Dec 15, 2024 - 7:30 PM</li>
-      <li><strong>Trade Expo:</strong> Jan 10, 2025 - 10:00 AM - 6:00 PM</li>
-      <li><strong>Spring Arts Festival:</strong> Mar 22, 2025 - 11:00 AM - 8:00 PM</li>
-    </ul>
-    <a href="events.html" class="cta-button">See All Events</a>
   </section>
-</section>
+</div>
+
+
+<script>
+  function changeMonth(direction) {
+    const monthPicker = document.getElementById('month-picker');
+    const currentDate = new Date(monthPicker.value + '-01'); // Get current month
+    currentDate.setMonth(currentDate.getMonth() + direction); // Adjust the month
+    const newMonth = currentDate.getMonth() + 1; // Month is zero-based
+    const newYear = currentDate.getFullYear();
+
+    // Update the month picker and label
+    monthPicker.value = `${newYear}-${newMonth < 10 ? '0' + newMonth : newMonth}`;
+    updateCalendar(newYear, newMonth);
+  }
+
+  function updateCalendar(year, month) {
+    // You can add your logic here to update the calendar grid based on the year and month
+    document.getElementById('currentMonthLabel').innerText = `${year}-${month < 10 ? '0' + month : month}`;
+  }
+
+  // Initial setup
+  updateCalendar(new Date().getFullYear(), new Date().getMonth() + 1);
+</script>
+
+<style>
+  /* Styling for the entire calendar section */
+  .calendar-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  .nav-button {
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+    padding: 0 15px;
+  }
+</style>
+
+
 
 <!-- Footer Section -->
 <footer>
