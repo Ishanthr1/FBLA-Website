@@ -146,7 +146,7 @@ body::before {
 .container {
     position: relative;
     max-width: 900px;
-    height: 80vh; /* Limits the height */
+    height: 70vh; /* Limits the height */
     margin: 30px auto;
     background: white;
     padding: 25px;
