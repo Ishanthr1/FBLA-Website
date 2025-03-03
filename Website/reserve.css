@@ -1,3 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 /* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
@@ -8,57 +19,150 @@ body {
 }
 
 header {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Header */
-header {
-    background-color: #2e7d32;
-    padding: 15px 0;
     position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
-.header-container {
-    max-width: 1200px;
-    margin: 0 auto;
+/* Top Bar */
+.top-bar {
+    position: sticky;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    background-color: white;
+    padding: 10px 30px;
+    border-bottom: 3px solid #4CAF50; /* Green accent line */
 }
 
-.title-link {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #fff;
+/* Left Section (Logo & Name) */
+.left {
+    position: sticky;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    position: sticky;
+    width: 80px;
+    height: auto;
+}
+
+.team-name {
+    position: sticky;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: black;
+}
+
+/* Right Section (Links & Icons) */
+.right {
+    position: sticky;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.right a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    font-weight: 500;
     transition: color 0.3s ease;
 }
 
-.title-link:hover {
-    color: #a5d6a7;
+.right a:hover {
+    color: #4CAF50;
 }
 
-nav ul {
+.divider {
+    font-size: 1.2rem;
+    color: #4CAF50;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 12px 30px;
+}
+
+.nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
-nav ul li a {
-    color: #fff;
-    padding: 10px 15px;
+.nav-links li a {
+    color: white;
     font-size: 1rem;
-    transition: background 0.3s ease, color 0.3s ease;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-    background: #1b5e20;
-    border-radius: 5px;
-    color: #a5d6a7;
+.nav-links li a:hover {
+    color: #4CAF50;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(0, 128, 0, 0.95);
+        width: 200px;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 15px;
+        border-radius: 10px;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background: url('https://i.imgur.com/vOiUWk4.png') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: brightness(1.5);
+    overflow: hidden;
+}
+
+.language-icon {
+    width: 30px; /* Adjust size */
+    height: auto;
+    cursor: pointer;
 }
 
 section {

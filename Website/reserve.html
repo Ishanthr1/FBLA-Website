@@ -20,21 +20,34 @@
 
 <!-- Header section of the page -->
 <header>
-  <div class="header-container">
-    <!-- Site Title and Navigation links -->
-    <h1><a href="home.html" class="title-link">Hillcrest High Gym</a></h1>
-    <nav>
-      <ul>
-        <!-- Navigation links to different pages -->
-        <li><a href="calendar.html">Events Calendar</a></li>
-        <li><a href="buy-tickets.html">Box Office</a></li>
-        <li><a href="infopage.html">Information</a></li>
-        <li><a href="reserve.html">Reservation</a></li>
-      </ul>
-    </nav>
+  <div  class="top-bar">
+    <div class="left">
+      <a href="home.html">
+        <img src="https://sportshub2-uploads.vnn-prod.zone/files/sites/1885/2019/08/20105418/image001.png" alt="Hillcrest Huskies Logo" class="logo">
+      </a>
+      <span class="team-name">HILLCREST LEGACY ARENA</span>
+    </div>
+    <div class="right">
+      <a target="_blank" href="https://translate.google.com/translate?sl=en&tl=es&u=https%3A%2F%2Fhillcresthighgym.netlify.app%2F">
+        <img src="https://i.imgur.com/QX8arz5.png" alt="Language" class="language-icon">
+      </a>
+      <span class="divider">|</span>
+    </div>
   </div>
+  <nav>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="calendar.html">Events Calendar</a></li>
+      <li><a href="buy-tickets.html">Box Office</a></li>
+      <li><a href="infopage.html">Information</a></li>
+      <li><a href="reserve.html">Reservation</a></li>
+    </ul>
+  </nav>
 </header>
-
 <!-- Information Section about Arena Rental -->
 <section class="info-section">
   <!-- Heading for the section -->
@@ -221,6 +234,18 @@
       <!-- Checkbox for agreeing to terms and conditions -->
       <label for="terms">Do you agree to the terms and conditions for using the facility?</label>
       <input type="checkbox" id="terms" name="terms" required><br>
+
+      <h3>11. Chart Designer</h3>
+
+      <div id="chartDesigner" style="width: 1120px; height: 600px;"></div>
+      <script src="https://cdn-na.seatsio.net/chart.js"></script>
+      <script>
+        new seatsio.SeatingChartDesigner({
+            divId: 'chartDesigner',
+            secretKey: '3f742cd5-c9a1-4354-a979-cb5d535470a4',
+            chartKey: '5c5c3fa0-0009-5f8e-1bac-90117c726afa'
+        }).render();
+      </script>
 
       <!-- Submit button for the form -->
       <button type="submit" class="button">Submit Booking Request</button>
