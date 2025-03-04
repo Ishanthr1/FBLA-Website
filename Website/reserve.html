@@ -15,6 +15,127 @@
 
   <!-- Google font for Poppins style -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>/* Global Styles */
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e8f5e9; /* Light green background */
+    color: #1b5e20; /* Dark green text */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.imgur.com/vOiUWk4.png') no-repeat center center/cover;
+    filter: blur(8px); /* Blurs only the background */
+    z-index: -1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Container Styles */
+.container, .info-section, .contact-section {
+  width: 80%;
+  margin: 0 auto;
+  box-sizing: border-box;  /* To ensure padding and borders are included in width calculation */
+}
+
+/* Section Styles */
+.contact-section, .info-section {
+  background-color: white;
+  padding: 20px;
+  margin-top: 40px;  /* Add more space between the previous section */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+h2, h3 {
+  color: #000000; /* Dark green text */
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 8px;
+}
+
+/* Paragraph and List Styles */
+p {
+  font-size: 1.1em;
+  color: #1b5e20; /* Dark green text */
+}
+
+ul {
+  margin-left: 20px;
+}
+
+li {
+  font-size: 1.1em;
+  color: #1b5e20; /* Dark green text */
+}
+
+/* Button Styles */
+button {
+  background-color: #4CAF50; /* Green background for the button */
+  color: white;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #388e3c; /* Darker green on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+
+  h2 {
+    font-size: 1.8em;
+  }
+
+  h3 {
+    font-size: 1.4em;
+  }
+
+  p, li {
+    font-size: 1em;
+  }
+
+  button {
+    font-size: 1em;
+    padding: 8px 16px;
+  }
+}
+
+  </style>
 </head>
 <body>
 
@@ -49,50 +170,47 @@
   </nav>
 </header>
 <!-- Information Section about Arena Rental -->
-<section class="info-section">
-  <!-- Heading for the section -->
-  <h2>Arena Rental Information</h2>
+<div class="container">
+  <!-- First Section: Introduction and Event Types -->
+  <div class="info-section">
+    <h2>Arena Rental Information</h2>
+    <p>Our versatile gymnasium is available for rent for various events, including:</p>
+    <ul>
+      <li>Local Sporting Events</li>
+      <li>Live Concerts</li>
+      <li>Trade Shows</li>
+      <li>Community Gatherings</li>
+      <li>Private Events</li>
+    </ul>
+    <p>With cutting-edge facilities, customizable seating arrangements, and top-tier amenities, our arena is the perfect venue for any occasion.</p>
+    <p>Additional services available:</p>
+    <ul>
+      <li>Catering and concession stands</li>
+      <li>Security personnel and crowd management</li>
+      <li>Event setup and teardown assistance</li>
+      <li>Custom branding opportunities</li>
+    </ul>
+  </div>
 
-  <!-- Brief introduction and event types -->
-  <p>Our versatile gymnasium is available for rent for various events, including:</p>
-  <ul>
-    <li>Local Sporting Events</li>
-    <li>Live Concerts</li>
-    <li>Trade Shows</li>
-    <li>Community Gatherings</li>
-    <li>Private Events</li>
-  </ul>
+  <!-- Second Section: Rental Details and Booking Info -->
+  <div class="info-section">
+    <h3>Rental Details</h3>
+    <p>Our arena is equipped with:</p>
+    <ul>
+      <li>High-quality sound and lighting systems</li>
+      <li>Seating for up to 3,500 people</li>
+      <li>State-of-the-art flooring suitable for various sports</li>
+      <li>Ample parking space</li>
+    </ul>
 
-  <!-- Rental details for the arena -->
-  <h3>Rental Details</h3>
-  <p>Our arena is equipped with:</p>
-  <ul>
-    <li>High-quality sound and lighting systems</li>
-    <li>Seating for up to 3,500 people</li>
-    <li>State-of-the-art flooring suitable for various sports</li>
-    <li>Ample parking space</li>
-  </ul>
+    <h3>Rental Costs</h3>
+    <p>Rental fees vary based on the event type and duration. Please contact us for a personalized quote. We offer flexible packages to suit your needs.</p>
 
-  <!-- Information on rental costs -->
-  <h3>Rental Costs</h3>
-  <p>Rental fees vary based on the event type and duration. Please contact us for a personalized quote. We offer flexible packages to suit your needs.</p>
-
-  <!-- Information on the booking process -->
-  <h3>Booking Process</h3>
-  <p>To reserve the arena for your event, please click the button below to fill out the booking form.</p>
-  <button id="openModal">Book Now</button>
-</section>
-
-<!-- Contact Information Section -->
-<section class="contact-section">
-  <h2>Contact Information</h2>
-  <p>If you have any questions or would like to book the arena, please get in touch:</p>
-  <ul>
-    <li><strong>Phone:</strong> (801) 826-6000</li>
-    <li><strong>Email:</strong> <a href="mailto:arena@domain.com">arena@domain.com</a></li>
-    <li><strong>Address:</strong> 7350 S 900 E, Midvale, UT 84047</li>
-  </ul>
-</section>
+    <h3>Booking Process</h3>
+    <p>To reserve the arena for your event, please click the button below to fill out the booking form.</p>
+    <button id="openModal">Book Now</button>
+  </div>
+</div>
 
 <!-- Modal for the booking form -->
 <div id="bookingModal" class="modal">
