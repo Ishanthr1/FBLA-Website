@@ -39,27 +39,24 @@
 </header>
 
 
-<!-- Main Section: Calendar with Event Details -->
 <div class="container">
   <section id="calendar-section">
     <div class="calendar-header">
       <h2>Upcoming Events</h2>
       <p>Browse through our upcoming events and stay up to date with what's happening.</p>
-      <!-- Date Picker -->
       <div class="date-picker">
         <input type="month" id="month-picker" name="month-picker" onchange="navigateToMonth(event)">
       </div>
     </div>
 
-    <!-- Calendar Grid -->
     <div id="calendarWrapper">
       <div class="calendar-navigation">
         <button id="prevMonthButton" class="nav-button" onclick="changeMonth(-1)">
-          &lt; <!-- Left arrow -->
+          &lt;
         </button>
         <div id="currentMonthLabel"></div>
         <button id="nextMonthButton" class="nav-button" onclick="changeMonth(1)">
-          &gt; <!-- Right arrow -->
+          &gt;
         </button>
       </div>
       <div id="calendarGrid"></div>
@@ -111,10 +108,9 @@
 
 
 
-<!-- Footer Section -->
 <footer>
   <div class="footer-container">
-    <p>&copy; 2025 School Arena. All rights reserved.</p>
+    <p>&copy; 2025 Husky's Legacy Arena. All rights reserved.</p>
     <div class="footer-links">
       <a href="#faq">FAQs</a> | <a href="#contact">Contact</a> | <a href="#download">Download Full Schedule</a>
     </div>
@@ -123,82 +119,84 @@
 
 <script>
   const events = [
-    { date: "2025-4-01", name: "High School Basketball Championship", time: "6:00 PM" },
-    { date: "2025-4-15", name: "Winter Concert", time: "7:30 PM" },
+    { date: "2025-03-15", name: "Rock Fest 2025", time: "6:00 PM - 11:00 PM" },
+    { date: "2025-03-28", name: "Huskies vs Spartans", time: "7:30 PM - 10:00 PM" },
+    { date: "2025-04-01", name: "High School Basketball Championship", time: "6:00 PM" },
+    { date: "2025-04-15", name: "Spring Concert", time: "7:30 PM" },
     { date: "2025-05-10", name: "Trade Expo", time: "10:00 AM - 6:00 PM" },
-    { date: "2025-05-22", name: "Spring Arts Festival", time: "11:00 AM - 8:00 PM" }
+    { date: "2025-06-05", name: "Comedy Night Extravaganza", time: "8:00 PM" }
   ];
 
-  const calendarGrid = document.getElementById("calendarGrid");
-  const currentMonthLabel = document.getElementById("currentMonthLabel");
-  const prevMonthButton = document.getElementById("prevMonthButton");
-  const nextMonthButton = document.getElementById("nextMonthButton");
+    const calendarGrid = document.getElementById("calendarGrid");
+    const currentMonthLabel = document.getElementById("currentMonthLabel");
+    const prevMonthButton = document.getElementById("prevMonthButton");
+    const nextMonthButton = document.getElementById("nextMonthButton");
 
-  let currentDate = new Date();
+    let currentDate = new Date();
 
-  // Render the calendar
-  function renderCalendar(date) {
-    calendarGrid.innerHTML = "";
-    const year = date.getFullYear();
-    const month = date.getMonth();
-    const firstDay = new Date(year, month, 1).getDay();
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    // Render the calendar
+    function renderCalendar(date) {
+      calendarGrid.innerHTML = "";
+      const year = date.getFullYear();
+      const month = date.getMonth();
+      const firstDay = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-    currentMonthLabel.textContent = `${date.toLocaleString('default', { month: 'long' })} ${year}`;
+      currentMonthLabel.textContent = `${date.toLocaleString('default', { month: 'long' })} ${year}`;
 
-    // Render empty cells for previous month days
-    for (let i = 0; i < firstDay; i++) {
-      const emptyCell = document.createElement("div");
-      emptyCell.classList.add("calendar-day", "empty");
-      calendarGrid.appendChild(emptyCell);
-    }
-
-    // Render each day of the month
-    for (let day = 1; day <= daysInMonth; day++) {
-      const cell = document.createElement("div");
-      cell.classList.add("calendar-day");
-      cell.textContent = day;
-
-      const event = events.find(e => e.date === `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`);
-      if (event) {
-        const eventLabel = document.createElement("span");
-        eventLabel.classList.add("event-label");
-        eventLabel.textContent = `${event.name} - ${event.time}`;
-        cell.appendChild(eventLabel);
+      // Render empty cells for previous month days
+      for (let i = 0; i < firstDay; i++) {
+        const emptyCell = document.createElement("div");
+        emptyCell.classList.add("calendar-day", "empty");
+        calendarGrid.appendChild(emptyCell);
       }
 
-      calendarGrid.appendChild(cell);
+      // Render each day of the month
+      for (let day = 1; day <= daysInMonth; day++) {
+        const cell = document.createElement("div");
+        cell.classList.add("calendar-day");
+        cell.textContent = day;
+
+        const event = events.find(e => e.date === `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`);
+        if (event) {
+          const eventLabel = document.createElement("span");
+          eventLabel.classList.add("event-label");
+          eventLabel.textContent = `${event.name} - ${event.time}`;
+          cell.appendChild(eventLabel);
+        }
+
+        calendarGrid.appendChild(cell);
+      }
     }
-  }
 
-  // Navigate to the previous month
-  function prevMonth() {
-    currentDate.setMonth(currentDate.getMonth() - 1);
+    // Navigate to the previous month
+    function prevMonth() {
+      currentDate.setMonth(currentDate.getMonth() - 1);
+      renderCalendar(currentDate);
+    }
+
+    // Navigate to the next month
+    function nextMonth() {
+      currentDate.setMonth(currentDate.getMonth() + 1);
+      renderCalendar(currentDate);
+    }
+
+    // Navigate to a specific month using the picker
+    function navigateToMonth(event) {
+      const selectedDate = event.target.value.split("-");
+      const year = parseInt(selectedDate[0], 10);
+      const month = parseInt(selectedDate[1], 10) - 1; // Months are zero-based in JavaScript
+      currentDate = new Date(year, month, 1); // Set the date to the first of the selected month
+      renderCalendar(currentDate);
+    }
+
+
+    // Event listeners for navigation buttons
+    prevMonthButton.addEventListener("click", prevMonth);
+    nextMonthButton.addEventListener("click", nextMonth);
+
+    // Initial render
     renderCalendar(currentDate);
-  }
-
-  // Navigate to the next month
-  function nextMonth() {
-    currentDate.setMonth(currentDate.getMonth() + 1);
-    renderCalendar(currentDate);
-  }
-
-  // Navigate to a specific month using the picker
-  function navigateToMonth(event) {
-    const selectedDate = event.target.value.split("-");
-    const year = parseInt(selectedDate[0], 10);
-    const month = parseInt(selectedDate[1], 10) - 1; // Months are zero-based in JavaScript
-    currentDate = new Date(year, month, 1); // Set the date to the first of the selected month
-    renderCalendar(currentDate);
-  }
-
-
-  // Event listeners for navigation buttons
-  prevMonthButton.addEventListener("click", prevMonth);
-  nextMonthButton.addEventListener("click", nextMonth);
-
-  // Initial render
-  renderCalendar(currentDate);
 </script>
 </body>
 </html>

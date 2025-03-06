@@ -17,7 +17,7 @@ a {
 }
 
 .glow-text {
-    color: black; /* Text remains black */
+    color: black;
     text-shadow: 0 0 1.5px #ffffff, 0 0 10px #ffffff, 0 0 15px #000000, 0 0 20px #ffffff;
 }
 
@@ -27,7 +27,6 @@ header {
     width: 100%;
 }
 
-/* Top Bar */
 .top-bar {
     position: sticky;
     display: flex;
@@ -38,7 +37,6 @@ header {
     border-bottom: 3px solid #4CAF50; /* Green accent line */
 }
 
-/* Left Section (Logo & Name) */
 .left {
     position: sticky;
     display: flex;
@@ -59,7 +57,6 @@ header {
     color: black;
 }
 
-/* Right Section (Links & Icons) */
 .right {
     position: sticky;
     display: flex;
@@ -84,7 +81,6 @@ header {
     color: #4CAF50;
 }
 
-/* Navigation Bar */
 nav {
     display: flex;
     justify-content: space-between;
@@ -178,12 +174,12 @@ nav {
 .hero * {
     font-size: 3rem;
     position: relative;
-    z-index: 1; /* Keeps text and content above the overlay */
+    z-index: 1;
 }
 
 
 .language-icon {
-    width: 30px; /* Adjust size */
+    width: 30px;
     height: auto;
     cursor: pointer;
 }
@@ -196,17 +192,8 @@ nav {
 
 .hero h2 {
     font-size: 2.5rem;
-    max-width: 80%; /* Prevents excessive scaling */
     margin-bottom: 15px;
-    white-space: nowrap; /* Ensures it doesn't break into multiple lines */
 }
-
-.cta-button {
-    font-size: 1rem;
-    max-width: 250px; /* Prevents excessive scaling */
-    white-space: nowrap;
-}
-
 
 .hero p {
     font-size: 1.2rem;
@@ -250,25 +237,17 @@ nav {
     }
 }
 
-/* Features Section */
 
-/* Footer */
-
-
-
-/* Responsive Styles */
-
-/* Mobile Devices - Below 600px */
 @media (max-width: 600px) {
     header .header-content {
-        display: none; /* Hide the header content */
+        display: none;
     }
 
     .menu-toggle {
-        display: block; /* Show the hamburger icon */
-        position: absolute; /* Position the hamburger icon */
-        top: 20px; /* Distance from the top of the screen */
-        right: 20px; /* Distance from the right side of the screen */
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
         cursor: pointer;
     }
 
@@ -280,13 +259,13 @@ nav {
     }
 
     nav ul {
-        display: none; /* Hide navigation by default */
+        display: none;
         flex-direction: column;
         gap: 10px;
     }
 
     nav ul.active {
-        display: flex; /* Show navigation when 'active' class is added */
+        display: flex;
     }
 
     .title-link {
@@ -328,7 +307,7 @@ nav {
     }
 }
 
-/* Tablets - 600px to 900px */
+
 @media (min-width: 600px) and (max-width: 900px) {
     .hero {
         padding: 80px 20px;
@@ -365,23 +344,22 @@ nav {
     }
 }
 
-/* Desktops - Above 900px */
 @media (min-width: 900px) {
     .hero {
         padding: 100px 20px;
     }
 
     .hero h2 {
-        font-size: 2.5rem;
+        font-size: 2.5rem !important;
     }
 
     .hero p {
-        font-size: 1.2rem;
+        font-size: 1.2rem !important;
     }
 
     .cta-button {
-        padding: 12px 25px;
-        font-size: 1.1rem;
+        padding: 12px 25px !important;
+        font-size: 1.1rem !important;
     }
 
     .feature-cards {

@@ -5,10 +5,12 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Array of event objects with date, name, and time properties
     const events = [
-        { date: "2024-12-01", name: "High School Basketball Championship", time: "6:00 PM" },
-        { date: "2024-12-15", name: "Winter Concert", time: "7:30 PM" },
-        { date: "2025-01-10", name: "Trade Expo", time: "10:00 AM - 6:00 PM" },
-        { date: "2025-03-22", name: "Spring Arts Festival", time: "11:00 AM - 8:00 PM" }
+            { date: "2025-3-15", name: "Rock Fest 2025", time: "6:00 PM - 11:00 PM" },
+            { date: "2025-3-28", name: "Huskies vs Spartans", time: "7:30 PM - 10:00 PM" },
+            { date: "2025-4-01", name: "High School Basketball Championship", time: "6:00 PM" },
+            { date: "2025-4-15", name: "Spring Concert", time: "7:30 PM" },
+            { date: "2025-05-10", name: "Trade Expo", time: "10:00 AM - 6:00 PM" },
+            { date: "2025-06-05", name: "Comedy Night Extravaganza", time: "8:00 PM" }
     ];
 
     // Elements for displaying the calendar grid and the current month label
