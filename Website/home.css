@@ -152,7 +152,7 @@ nav {
 /* Hero Section */
 .hero {
     position: relative;
-    background: url('https://i.imgur.com/vOiUWk4.png') no-repeat center center/cover;
+    background: url('https://i.imgur.com/d2gv8Gd.jpeg') no-repeat center center/cover;
     color: #fff;
     text-align: center;
     height: 100vh;
@@ -170,13 +170,13 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('https://i.imgur.com/vOiUWk4.png') no-repeat center center/cover;
-    filter: blur(0px); /* Applies blur to the overlay */
+    background: url('https://i.imgur.com/d2gv8Gd.jpeg') no-repeat center center/cover;
+    filter: blur(2.5px); /* Applies blur to the overlay */
     z-index: 0; /* Ensures it stays behind the text but above the background */
 }
 
 .hero * {
-    font-size: 2.5rem;
+    font-size: 3rem;
     position: relative;
     z-index: 1; /* Keeps text and content above the overlay */
 }
@@ -196,8 +196,17 @@ nav {
 
 .hero h2 {
     font-size: 2.5rem;
+    max-width: 80%; /* Prevents excessive scaling */
     margin-bottom: 15px;
+    white-space: nowrap; /* Ensures it doesn't break into multiple lines */
 }
+
+.cta-button {
+    font-size: 1rem;
+    max-width: 250px; /* Prevents excessive scaling */
+    white-space: nowrap;
+}
+
 
 .hero p {
     font-size: 1.2rem;

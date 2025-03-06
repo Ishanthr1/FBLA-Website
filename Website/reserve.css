@@ -142,19 +142,7 @@ nav {
     }
 }
 
-/* Hero Section */
-.hero {
-    position: relative;
-    background: url('https://i.imgur.com/vOiUWk4.png') no-repeat center center/cover;
-    color: #fff;
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    filter: brightness(1.5);
-    overflow: hidden;
-}
+
 
 .language-icon {
     width: 30px; /* Adjust size */
