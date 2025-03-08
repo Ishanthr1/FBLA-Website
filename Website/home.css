@@ -358,8 +358,8 @@ nav {
     }
 
     .cta-button {
-        padding: 12px 25px !important;
-        font-size: 1.1rem !important;
+        padding: 12px 25px;
+        font-size: 1.1rem;
     }
 
     .feature-cards {
