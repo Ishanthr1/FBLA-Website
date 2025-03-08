@@ -378,5 +378,10 @@ nav {
         padding: 20px;
     }
 }
+h4{
+ font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+        line-height: 1.6;
+    margin: 0;}
 
 

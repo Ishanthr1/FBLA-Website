@@ -213,13 +213,25 @@ button:hover {
 
 /* Footer */
 footer {
-    text-align: center;
-    background: #388e3c;
-    color: #fff;
-    padding: 15px 0;
-    margin-top: 20px;
-    font-size: 0.9rem;
-}
+                background: url("https://i.imgur.com/yjuCGaV.png") no-repeat center center;
+                        background-size: 2000%;
+                        color: #fff;
+                        text-align: center;
+                        padding: 20px 0;
+                        width: 100%;
+                        margin-top: auto;
+                        position: relative;
+            }
+
+            footer .footer-links a {
+                color: white;
+                text-decoration: none;
+                margin: 0 10px;
+            }
+
+            footer .footer-links a:hover {
+                text-decoration: underline;
+            }
 
 @media screen and (max-width: 600px) {
     header .header-content {
@@ -286,3 +298,9 @@ footer {
         padding: 10px;
     }
 }
+
+h4{
+ font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+        line-height: 1.6;
+    margin: 0;}

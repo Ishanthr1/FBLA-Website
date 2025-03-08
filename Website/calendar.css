@@ -273,10 +273,14 @@ nav {
 }
 
 footer {
-    background-color: #111111;
-    color: white;
-    padding: 20px;
-    text-align: center;
+    background: url("https://i.imgur.com/yjuCGaV.png") no-repeat center center;
+            background-size: 1000%;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+            margin-top: auto;
+            position: relative;
 }
 
 footer .footer-links a {
@@ -401,3 +405,9 @@ footer .footer-links a:hover {
 
     .calendar-navigation {
         flex-direction: row
+
+        h4{
+         font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+                line-height: 1.6;
+            margin: 0;}
