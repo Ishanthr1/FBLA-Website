@@ -78,7 +78,7 @@ header {
 
 .divider {
     font-size: 1.2rem;
-    color: #4CAF50;
+    color: #2E7D32;
 }
 
 nav {
@@ -224,7 +224,7 @@ body::before {
     margin-top: 10px;
 }
 .buy-btn {
-    background-color: #28a745;
+    background-color: #2E7D32;
     color: white;
     border: none;
     padding: 10px 16px;

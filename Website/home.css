@@ -7,7 +7,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f7f7f7;
-    color: #333;
+    color: #2E7D32;
     line-height: 1.6;
 }
 
@@ -203,7 +203,7 @@ nav {
 .cta-button {
     display: inline-block;
     padding: 12px 25px;
-    background: #1b5e20;
+    background: #2E7D32;
     color: #fff;
     font-size: 1rem;
     font-weight: 600;
