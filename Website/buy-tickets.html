@@ -164,8 +164,8 @@
             event: '39438dd5-c128-46f2-9688-bb76e7143878',
             session: 'continue',
             pricing: [
-                { 'category': 1, 'price': 20 },
-                { 'category': 2, 'price': 50 },
+                { 'category': 1, 'price': 50 },
+                { 'category': 2, 'price': 70 },
                 { 'category': 3, 'price': 90 }
             ],
             priceFormatter: function(price) {
@@ -179,8 +179,7 @@
     }
 
     function purchaseTicket() {
-        alert("Redirecting to purchase page...");
-        // Add purchase logic here (e.g., redirect to payment page)
+        window.open("https://buy.stripe.com/test_00g3cU1vT0d7bAI3cc", "_blank");
     }
 
     // Attach event listener to "Buy Ticket" buttons
