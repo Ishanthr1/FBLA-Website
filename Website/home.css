@@ -378,35 +378,3 @@ nav {
         padding: 20px;
     }
 }
-h4{
- font-family: 'Poppins', sans-serif;
-    color: #ffffff;
-        line-height: 1.6;
-    margin: 0;}
- <div class="info-box prices">
-            <h2>Arena Pricing</h2>
-            <ul>
-                <li><strong>Event Pricing</strong>
-                    <ul>
-                        <li>Upper bowl: $50</li>
-                        <li>Lower bowl: $70</li>
-                        <li>VIP Seating: $90</li>
-                    </ul>
-                </li>
-                <li><strong>Code of Conduct:</strong>
-                    <ul>
-                        <li>Respect all attendees and staff.</li>
-                        <li>No abusive or disruptive behavior.</li>
-                        <li>Follow safety instructions during emergencies.</li>
-                    </ul>
-                </li>
-                <li><strong>Refund Policy:</strong> Tickets are non-refundable unless the event is canceled. Exchanges allowed up to 48 hours before the event.</li>
-                <li><strong>Health and Safety:</strong>
-                    <ul>
-                        <li>Masks encouraged indoors if sick.</li>
-                        <li>Hand sanitizer stations available.</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-
