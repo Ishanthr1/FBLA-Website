@@ -1,3 +1,4 @@
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
@@ -25,48 +26,43 @@ a {
 header {
     position: sticky;
     width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 .top-bar {
-    position: sticky;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: white;
     padding: 10px 30px;
-    border-bottom: 3px solid #4CAF50; /* Green accent line */
+    border-bottom: 3px solid #4CAF50;
 }
 
 .left {
-    position: sticky;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
 .logo {
-    position: sticky;
     width: 80px;
     height: auto;
 }
 
 .team-name {
-    position: sticky;
     font-size: 1.8rem;
     font-weight: bold;
     color: black;
 }
 
 .right {
-    position: sticky;
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
 .right a {
-    text-decoration: none;
-    color: black;
     font-size: 1rem;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -121,26 +117,25 @@ nav {
     background-color: white;
 }
 
-@media screen and (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: rgba(0, 128, 0, 0.95);
-        width: 200px;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        padding: 15px;
-        border-radius: 10px;
-        display: none;
-    }
+.nav-links.active {
+    display: flex;
+}
 
-    .nav-links.active {
+@media (max-width: 768px) {
+    .menu-toggle {
         display: flex;
     }
-
-    .menu-toggle {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: black;
+        padding: 10px;
+    }
+    .nav-links.active {
         display: flex;
     }
 }
@@ -155,8 +150,8 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    filter: brightness(1.5);
     overflow: hidden;
+    filter: brightness(1.5);
 }
 
 .hero::before {
@@ -167,56 +162,47 @@ nav {
     width: 100%;
     height: 100%;
     background: url('https://i.imgur.com/d2gv8Gd.jpeg') no-repeat center center/cover;
-    filter: blur(2.5px); /* Applies blur to the overlay */
-    z-index: 0; /* Ensures it stays behind the text but above the background */
-}
-
-.hero * {
-    font-size: 3rem;
-    position: relative;
-    z-index: 1;
+    filter: blur(2.5px);
+    z-index: 0;
 }
 
 .hero h2 {
-    /* Note to team: when setting font sizes, you are setting them in multiple places. 
-    Use the !important key to override. So change the below to lines to set the font-size*/
     font-size: 3.5rem !important;
     font-weight: bold;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 .hero p {
     font-size: 2.5rem !important;
     text-align: center;
-}
-
-.hero-content {
-    margin-top: 10px;
     position: relative;
     z-index: 1;
 }
 
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
 
 .cta-button {
     display: inline-block;
     padding: 12px 25px;
     background: #2E7D32;
     color: #fff;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     border-radius: 5px;
     transition: background 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    margin-top: 20px; /* Adjust spacing */
 }
 
 .cta-button:hover {
     background: #388e3c;
     transform: scale(1.05);
 }
-
-.cta-button:hover {
-    animation: pulse 1s infinite;
-}
-
 
 
 @keyframes pulse {
@@ -234,144 +220,14 @@ nav {
     }
 }
 
-
-@media (max-width: 600px) {
-    header .header-content {
-        display: none;
-    }
-
-    .menu-toggle {
-        display: block;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        cursor: pointer;
-    }
-
-    .menu-toggle div {
-        width: 25px;
-        height: 3px;
-        background-color: #333;
-        margin: 5px 0;
-    }
-
-    nav ul {
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    nav ul.active {
-        display: flex;
-    }
-
-    .title-link {
-        font-size: 1.8rem;
-    }
-
-    .hero {
-        padding: 60px 20px;
-    }
-
-    .hero h2 {
-        font-size: 1.8rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .cta-button {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-
-    .feature-cards {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .card {
-        width: 100%;
-    }
-
-    .newsletter input {
-        width: 200px;
-    }
-
-    .footer-container {
-        padding: 10px;
-    }
+/* Language Icon */
+.language-icon {
+    width: 30px;
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-
-@media (min-width: 600px) and (max-width: 900px) {
-    .hero {
-        padding: 80px 20px;
-    }
-
-    .hero h2 {
-        font-size: 2.2rem;
-    }
-
-    .hero p {
-        font-size: 1.1rem;
-    }
-
-    .cta-button {
-        padding: 10px 22px;
-        font-size: 1rem;
-    }
-
-    .feature-cards {
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .card {
-        width: 45%;
-    }
-
-    .newsletter input {
-        width: 220px;
-    }
-
-    .footer-container {
-        padding: 15px;
-    }
-}
-
-@media (min-width: 900px) {
-    .hero {
-        padding: 100px 20px;
-    }
-
-    .hero h2 {
-        font-size: 2.5rem !important;
-    }
-
-    .hero p {
-        font-size: 1.2rem !important;
-    }
-
-    .cta-button {
-        padding: 12px 25px;
-        font-size: 1.1rem;
-    }
-
-    .feature-cards {
-        justify-content: space-around;
-    }
-
-    .card {
-        width: 300px;
-    }
-
-    .newsletter input {
-        width: 250px;
-    }
-
-    .footer-container {
-        padding: 20px;
-    }
+.language-icon:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
 }
