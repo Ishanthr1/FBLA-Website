@@ -177,17 +177,11 @@ nav {
     z-index: 1;
 }
 
-.hero h2 {
-    /* Note to team: when setting font sizes, you are setting them in multiple places. 
-    Use the !important key to override. So change the below to lines to set the font-size*/
-    font-size: 7rem !important; 
-    font-weight: bold;
-    text-align: center;
-}
 
-.hero p {
-    font-size: 5rem !important;
-    text-align: center;
+.language-icon {
+    width: 30px;
+    height: auto;
+    cursor: pointer;
 }
 
 .hero-content {
@@ -196,11 +190,14 @@ nav {
     z-index: 1;
 }
 
+.hero h2 {
+    font-size: 7px;
+    margin-bottom: 15px;
+}
 
-.language-icon {
-    width: 30px;
-    height: auto;
-    cursor: pointer;
+.hero p {
+    font-size: 4px;
+    margin-bottom: 25px;
 }
 
 .cta-button {
@@ -280,12 +277,10 @@ nav {
     }
 
     .hero h2 {
-        /* Andry Comment */
         font-size: 1.8rem;
     }
 
     .hero p {
-        /* Andry Comment */
         font-size: 1rem;
     }
 
@@ -355,11 +350,11 @@ nav {
     }
 
     .hero h2 {
-        font-size: 2.5rem;
+        font-size: 2.5rem !important;
     }
 
     .hero p {
-        font-size: 1.2rem;
+        font-size: 1.2rem !important;
     }
 
     .cta-button {
