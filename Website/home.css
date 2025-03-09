@@ -180,13 +180,13 @@ nav {
 .hero h2 {
     /* Note to team: when setting font sizes, you are setting them in multiple places. 
     Use the !important key to override. So change the below to lines to set the font-size*/
-    font-size: 7rem !important; 
+    font-size: 2rem !important; 
     font-weight: bold;
     text-align: center;
 }
 
 .hero p {
-    font-size: 5rem !important;
+    font-size: 1.5rem !important;
     text-align: center;
 }
 
