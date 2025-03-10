@@ -9,7 +9,7 @@
 </head>
 <body>
 <header>
-    <div  class="top-bar">
+    <div class="top-bar">
         <div class="left">
             <a href="home.html">
                 <img src="https://sportshub2-uploads.vnn-prod.zone/files/sites/1885/2019/08/20105418/image001.png" alt="Hillcrest Huskies Logo" class="logo">
@@ -34,9 +34,51 @@
             <li><a href="buy-tickets.html">Box Office</a></li>
             <li><a href="infopage.html">Information</a></li>
             <li><a href="reserve.html">Reservation</a></li>
+            <li><a href="#" onclick="openModal()">Contact</a></li>
         </ul>
     </nav>
 </header>
+
+<!-- Contact Modal -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Contact Us</h2>
+        <p>Select a topic:</p>
+        <select>
+            <option value="refund">Refund Ticket</option>
+            <option value="technical">Website Not Working</option>
+            <option value="event-info">Event Information</option>
+            <option value="reservation">Reservation Issues</option>
+            <option value="general">General Inquiry</option>
+        </select>
+        <textarea placeholder="Describe your issue..." rows="4"></textarea>
+        <button id="modalSubmit">Submit</button>
+    </div>
+</div>
+
+<script>
+    function openModal() {
+      document.getElementById("contactModal").style.display = "flex"; // Show the modal
+    }
+
+    function closeModal() {
+      document.getElementById("contactModal").style.display = "none"; // Hide the modal
+    }
+
+    // Ensure modal is hidden when the page loads
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("contactModal").style.display = "none";
+
+      // Add event listener to the submit button
+      document.getElementById("modalSubmit").addEventListener("click", function(event) {
+        event.preventDefault(); // Prevents form submission (remove this if using a real form)
+        closeModal(); // Close modal after clicking submit
+      });
+    });
+</script>
+
+
 <div class="container">
     <div class="search-container">
         <input type="text" id="search" class="search-bar" placeholder="Search for events...">

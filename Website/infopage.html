@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="infopage.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-<body>
+
 <style>
 body {
     font-family: 'Poppins', sans-serif;
@@ -71,8 +71,85 @@ footer {
     margin-top: 20px;
 }
 </style>
+<style>
+    /* Import Poppins font */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+  /* Modal styling */
+  .modal {
+    display: none; /* Keep only this */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  /* Modal content */
+  .modal-content {
+    background: #2E7D32; /* Husky Green */
+    padding: 30px;
+    width: 500px; /* Increased size */
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  /* Close button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+  }
+
+  /* Only apply width 100% to modal form elements */
+  .modal-content select,
+  .modal-content textarea,
+  .modal-content button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+  }
+
+  /* Keep footer button normal */
+  .newsletter-form button {
+    width: auto; /* Ensures it keeps its natural size */
+  }
+
+
+  /* Button */
+  .modal-content button {
+    background: #FFF;
+    color: #2E7D32;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s ease;
+  }
+
+  .modal-content button:hover {
+    background: #E0E0E0;
+  }
+
+
+</style>
+</head>
+<body>
 <header>
-    <div  class="top-bar">
+    <div class="top-bar">
         <div class="left">
             <a href="home.html">
                 <img src="https://sportshub2-uploads.vnn-prod.zone/files/sites/1885/2019/08/20105418/image001.png" alt="Hillcrest Huskies Logo" class="logo">
@@ -97,9 +174,51 @@ footer {
             <li><a href="buy-tickets.html">Box Office</a></li>
             <li><a href="infopage.html">Information</a></li>
             <li><a href="reserve.html">Reservation</a></li>
+            <li><a href="#" onclick="openModal()">Contact</a></li>
         </ul>
     </nav>
 </header>
+
+<!-- Contact Modal -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Contact Us</h2>
+        <p>Select a topic:</p>
+        <select>
+            <option value="refund">Refund Ticket</option>
+            <option value="technical">Website Not Working</option>
+            <option value="event-info">Event Information</option>
+            <option value="reservation">Reservation Issues</option>
+            <option value="general">General Inquiry</option>
+        </select>
+        <textarea placeholder="Describe your issue..." rows="4"></textarea>
+        <button id="modalSubmit">Submit</button>
+    </div>
+</div>
+
+<script>
+    function openModal() {
+      document.getElementById("contactModal").style.display = "flex"; // Show the modal
+    }
+
+    function closeModal() {
+      document.getElementById("contactModal").style.display = "none"; // Hide the modal
+    }
+
+    // Ensure modal is hidden when the page loads
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("contactModal").style.display = "none";
+
+      // Add event listener to the submit button
+      document.getElementById("modalSubmit").addEventListener("click", function(event) {
+        event.preventDefault(); // Prevents form submission (remove this if using a real form)
+        closeModal(); // Close modal after clicking submit
+      });
+    });
+</script>
+
+
 
 <main class="info-page">
 
