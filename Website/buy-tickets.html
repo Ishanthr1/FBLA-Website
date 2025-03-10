@@ -5,6 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="buy-tickets.css">
     <title>Events Listing</title>
+    <style>/* Contact Modal Styling */
+.contact-box-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-box-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.contact-box-close {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-box-close:hover {
+    color: red;
+}
+
+.contact-box-content h2 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.contact-box-content select,
+.contact-box-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-box-submit {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.contact-box-submit:hover {
+    background-color: #005f7b;
+}
+    </style>
 
 </head>
 <body>
@@ -40,9 +104,9 @@
 </header>
 
 <!-- Contact Modal -->
-<div id="contactModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
+<div id="contactBoxModal" class="contact-box-modal">
+    <div class="contact-box-content">
+        <span class="contact-box-close" onclick="closeContactBox()">&times;</span>
         <h2>Contact Us</h2>
         <p>Select a topic:</p>
         <select>
@@ -53,29 +117,29 @@
             <option value="general">General Inquiry</option>
         </select>
         <textarea placeholder="Describe your issue..." rows="4"></textarea>
-        <button id="modalSubmit">Submit</button>
+        <button id="contactBoxSubmit" class="contact-box-submit">Submit</button>
     </div>
 </div>
 
+
 <script>
-    function openModal() {
-      document.getElementById("contactModal").style.display = "flex"; // Show the modal
+    function openContactBox() {
+        document.getElementById("contactBoxModal").style.display = "flex";
     }
 
-    function closeModal() {
-      document.getElementById("contactModal").style.display = "none"; // Hide the modal
+    function closeContactBox() {
+        document.getElementById("contactBoxModal").style.display = "none";
     }
 
-    // Ensure modal is hidden when the page loads
     document.addEventListener("DOMContentLoaded", function() {
-      document.getElementById("contactModal").style.display = "none";
+        document.getElementById("contactBoxModal").style.display = "none";
 
-      // Add event listener to the submit button
-      document.getElementById("modalSubmit").addEventListener("click", function(event) {
-        event.preventDefault(); // Prevents form submission (remove this if using a real form)
-        closeModal(); // Close modal after clicking submit
-      });
+        document.getElementById("contactBoxSubmit").addEventListener("click", function(event) {
+            event.preventDefault();
+            closeContactBox();
+        });
     });
+
 </script>
 
 
