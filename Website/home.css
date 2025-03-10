@@ -197,6 +197,7 @@ nav {
     transition: background 0.3s ease, transform 0.2s ease;
     text-align: center;
     margin-top: 20px; /* Adjust spacing */
+    animation: pulse 1.5s infinite; /* Apply the pulse animation */
 }
 
 .cta-button:hover {
