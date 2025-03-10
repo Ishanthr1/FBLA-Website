@@ -184,45 +184,52 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const monthPicker = document.getElementById("month-picker");
-    const currentMonthLabel = document.getElementById("currentMonthLabel");
+      const monthPicker = document.getElementById("month-picker");
+      const currentMonthLabel = document.getElementById("currentMonthLabel");
 
-    let currentDate = new Date();
+      let currentDate = new Date();
 
-    function changeMonth(direction) {
-      currentDate.setMonth(currentDate.getMonth() + direction);
+      function changeMonth(direction) {
+          let newYear = currentDate.getFullYear();
+          let newMonth = currentDate.getMonth() + direction;
 
-      const newYear = currentDate.getFullYear();
-      const newMonth = currentDate.getMonth() + 1; // Month is zero-based
+          // Adjust year if needed
+          if (newMonth < 0) {
+              newMonth = 11; // December
+              newYear -= 1;
+          } else if (newMonth > 11) {
+              newMonth = 0; // January
+              newYear += 1;
+          }
 
-      // Update month picker
-      monthPicker.value = `${newYear}-${newMonth.toString().padStart(2, "0")}`;
+          // Create a new Date object to avoid day overflow issues
+          currentDate = new Date(newYear, newMonth, 1);
+          updateCalendar(newYear, newMonth);
+      }
 
-      updateCalendar(newYear, newMonth);
-    }
+      function updateCalendar(year, month) {
+          // Ensure month is correctly formatted (01, 02, ..., 12)
+          const formattedMonth = (month + 1).toString().padStart(2, "0");
 
-    function updateCalendar(year, month) {
-      // Update the displayed month label
-      currentMonthLabel.innerText = `${year}-${month.toString().padStart(2, "0")}`;
+          // Update UI elements
+          currentMonthLabel.innerText = `${year}-${formattedMonth}`;
+          monthPicker.value = `${year}-${formattedMonth}`;
 
-      // Call the function to update the calendar grid if needed
-      renderCalendar(new Date(year, month - 1, 1));
-    }
+          // Ensure the correct month is rendered
+          renderCalendar(new Date(year, month, 1));
+      }
 
-    // Update calendar when month picker changes manually
-    monthPicker.addEventListener("change", () => {
-      const selectedDate = new Date(monthPicker.value + "-01");
-      currentDate = selectedDate;
-      updateCalendar(selectedDate.getFullYear(), selectedDate.getMonth() + 1);
-    });
+      // Handle manual selection
+      monthPicker.addEventListener("change", () => {
+          const [year, month] = monthPicker.value.split("-").map(Number);
+          currentDate = new Date(year, month - 1, 1);
+          updateCalendar(year, month - 1);
+      });
 
-    // Initial setup to match the displayed month
-    monthPicker.value = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1)
-      .toString()
-      .padStart(2, "0")}`;
-
-    updateCalendar(currentDate.getFullYear(), currentDate.getMonth() + 1);
+      // Initialize calendar with the correct date
+      updateCalendar(currentDate.getFullYear(), currentDate.getMonth());
   });
+
 </script>
 
 
