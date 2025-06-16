@@ -68,6 +68,20 @@ h2 {
   margin-bottom: 10px;
 }
 
+  /* Animation Setup */
+  .info-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+    backdrop-filter: blur(8px); /* Background blur effect */
+  }
+
+  .info-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
 h3 {
   font-size: 1.5em;
   margin-bottom: 8px;
@@ -450,5 +464,25 @@ button:hover {
 <script>
   (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="KtpnUZPgJwAPt3ttsGMkx";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 </script>
+<script>
+  function revealOnScroll() {
+    const boxes = document.querySelectorAll('.info-section');
+    const triggerPoint = window.innerHeight * 0.85;
+
+    boxes.forEach(box => {
+      const boxTop = box.getBoundingClientRect().top;
+
+      if (boxTop < triggerPoint) {
+        box.classList.add('visible');
+      } else {
+        box.classList.remove('visible'); // re-hide when scrolling up
+      }
+    });
+  }
+
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+</script>
+
 </body>
 </html>
