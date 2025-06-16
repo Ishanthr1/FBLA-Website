@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Purchase Tickets - Laufey Tour</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn-na.seatsio.net/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #f4f6f8;
+      color: #111;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #111;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .chart-wrapper {
+      height: 500px;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fafafa;
+    }
+
+    .amenities {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .amenity {
+      background: #f1f5f9;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: 500;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: background 0.3s, border 0.3s;
+    }
+
+    .amenity.selected {
+      background: #c8e6c9;
+      border-color: #2e7d32;
+      color: #2e7d32;
+    }
+
+
+    .purchase-btn {
+      background: #2E7D32; /* Updated green color */
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background 0.3s;
+    }
+
+    .purchase-btn:hover {
+      background: #256628;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .close-modal {
+      margin-top: 1rem;
+      background: none;
+      border: none;
+      color: #777;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1 id="event-title">Loading...</h1>
+  <p id="event-details" style="margin-bottom: 1.5rem;"></p>
+  <p id="event-price" style="font-weight: bold; font-size: 1.1rem;"></p>
+
+  <div class="section">
+    <h2>Select Your Seats</h2>
+    <div id="chart" class="chart-wrapper"></div>
+  </div>
+
+  <div class="section">
+    <h2>Choose Amenities</h2>
+
+    <h3>Food & Drinks</h3>
+    <div class="amenities" id="food-options">
+      <div class="amenity" onclick="toggleSelection(this)">Burger Meal - $12</div>
+      <div class="amenity" onclick="toggleSelection(this)">Pizza Slice & Drink - $10</div>
+      <div class="amenity" onclick="toggleSelection(this)">Soda - $4</div>
+      <div class="amenity" onclick="toggleSelection(this)">Beer - $7</div>
+    </div>
+
+    <h3 style="margin-top: 2rem;">Merchandise</h3>
+    <div class="amenities" id="merch-options">
+      <div class="amenity" onclick="toggleSelection(this)">T-Shirt - $30</div>
+      <div class="amenity" onclick="toggleSelection(this)">Cap - $20</div>
+      <div class="amenity" onclick="toggleSelection(this)">Poster - $15</div>
+      <div class="amenity" onclick="toggleSelection(this)">VIP Lanyard - $10</div>
+    </div>
+  </div>
+  <script>
+    function toggleSelection(elem) {
+      elem.classList.toggle("selected");
+    }
+  </script>
+
+  <button class="purchase-btn" onclick="purchaseTicket()">Pay with Stripe</button>
+</div>
+
+<script>
+  // Parse query string
+  const params = new URLSearchParams(window.location.search);
+  const title = decodeURIComponent(params.get('title') || 'Event Name');
+  const date = decodeURIComponent(params.get('date') || 'TBD');
+  const venue = decodeURIComponent(params.get('venue') || 'Venue TBD');
+  const price = decodeURIComponent(params.get('price') || '0');
+
+  // Set page content dynamically
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('event-title').textContent = title;
+    document.getElementById('event-details').textContent = `${date} · ${venue}`;
+    document.getElementById('event-price').textContent = `From $${price}`;
+  });
+</script>
+
+<script>
+  // Seats.io chart rendering
+  new seatsio.SeatingChart({
+    divId: 'chart',
+    workspaceKey: '8bf65fda-803c-4a0d-988d-bb198c3b4440',
+    event: 'c605196b-0cea-4b7a-a5f9-1700818486c8',
+    session: 'continue',
+    pricing: [
+      { category: 1, price: 70 },
+      { category: 2, price: 50 },
+      { category: 3, price: 90 }
+    ],
+    priceFormatter: price => '$' + price
+  }).render();
+
+  function purchaseTicket() {
+    window.open("https://buy.stripe.com/test_00g3cU1vT0d7bAI3cc", "_blank");
+  }
+</script>
+</body>
+</html>
