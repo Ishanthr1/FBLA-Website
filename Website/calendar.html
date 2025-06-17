@@ -412,13 +412,48 @@
 
 <script>
   const events = [
-    { date: "2025-03-15", name: "Rock Fest 2025", time: "6:00 PM - 11:00 PM", description: "A night of rock music featuring top bands!" },
-    { date: "2025-03-14", name: "Huskies vs Spartans", time: "7:30 PM - 10:00 PM", description: "Epic basketball showdown between Huskies and Spartans." },
-    { date: "2025-04-01", name: "High School Basketball Championship", time: "6:00 PM", description: "Watch the best teams compete for the championship!" },
-    { date: "2025-04-15", name: "Spring Concert", time: "7:30 PM", description: "A musical evening with school bands and choirs." },
-    { date: "2025-05-10", name: "Trade Expo", time: "10:00 AM - 6:00 PM", description: "Explore the latest innovations and business ideas." },
-    { date: "2025-06-05", name: "Comedy Night Extravaganza", time: "8:00 PM", description: "Laugh out loud with top comedians!" }
-  ];
+
+  // 🏀 Sports (Basketball & Volleyball in Huskys Arena only)
+  { date: "2025-01-15", name: "Winter Basketball Kickoff", time: "7:00 PM", description: "Start the season with Huskies vs Timberline @ Husky's Arena." },
+  { date: "2025-02-23", name: "Girls Varsity Volleyball", time: "6:30 PM", description: "Intense match against Skyline High @ Husky's Arena." },
+  { date: "2025-04-15", name: "Boys High School Basketball State Championship", time: "5:00 PM", description: "Watch the best teams in the state compete for the championship! @ Husky's Arena." },
+  { date: "2025-03-17", name: "Huskies vs Spartans - Boys", time: "6:00 PM", description: "Rivals collide in an epic showdown! @ Husky's Arena." },
+  { date: "2025-06-14", name: "Hillcrest vs Tooele - Boys", time: "3:00 PM", description: "Hillcrest's Boys Volleyball team opens their season against the buffaloes. @ Husky's Arena." },
+  { date: "2025-07-03", name: "Volleyball Club Exhibition", time: "7:00 PM", description: "Club players showcase talent @ Husky's Arena." },
+  { date: "2025-08-20", name: "Fall Basketball Tryouts", time: "4:00 PM", description: "Open tryouts for fall season @ Husky's Arena." },
+  { date: "2025-10-05", name: "Volleyball Season Finale", time: "6:30 PM", description: "Huskies face off with East Ridge @ Husky's Arena." },
+
+  // 🎭 Theatre
+  { date: "2025-02-12", name: "Shakespeare Night", time: "7:30 PM", description: "Performing Macbeth with a modern twist." },
+  { date: "2025-03-30", name: "Improv Comedy Night", time: "6:00 PM", description: "Laugh out loud with our school’s improv team." },
+  { date: "2025-05-14", name: "Spring Musical: Grease", time: "7:00 PM", description: "Opening night of our spring musical production." },
+  { date: "2025-06-04", name: "Drama Club Awards", time: "5:00 PM", description: "Celebrating theatrical excellence from the year." },
+  { date: "2025-07-30", name: "Monologue Night", time: "6:30 PM", description: "Individual student performances." },
+  { date: "2025-08-22", name: "Theatre Bootcamp", time: "1:00 PM - 5:00 PM", description: "Crash course in stage acting and directing." },
+  { date: "2025-09-12", name: "Fall Play: The Crucible", time: "7:00 PM", description: "Dramatic retelling of Arthur Miller’s masterpiece." },
+  { date: "2025-11-03", name: "Winter Theatre Preview", time: "6:00 PM", description: "Sneak peek of upcoming shows." },
+
+  // 💻 Tech
+  { date: "2025-01-10", name: "Coding Kickoff: HTML Basics", time: "3:00 PM", description: "Learn how to build your first website!" },
+  { date: "2025-03-05", name: "Java Programming Camp", time: "2:00 PM", description: "Hands-on Java programming for beginners." },
+  { date: "2025-05-10", name: "Drone Flight Workshop", time: "10:00 AM", description: "Intro to drone building and piloting." },
+  { date: "2025-06-15", name: "Hack the Summer: Hackathon", time: "8:00 AM - 8:00 PM", description: "Join teams to build apps in one day." },
+  { date: "2025-07-12", name: "Robotics Battle Demo", time: "11:00 AM", description: "Watch our bots go head-to-head in the arena." },
+  { date: "2025-08-01", name: "Cybersecurity Workshop", time: "2:30 PM", description: "Learn how to protect yourself online." },
+  { date: "2025-09-25", name: "3D Printing Lab", time: "12:00 PM", description: "Bring your designs to life with 3D printers." },
+  { date: "2025-11-14", name: "Tech Club Year-End Showcase", time: "4:30 PM", description: "Check out student tech projects from all year." },
+
+  // 💪 Wellness & Fitness
+  { date: "2025-02-01", name: "Mindfulness Monday", time: "9:00 AM", description: "Start your week with breathing and calmness." },
+  { date: "2025-04-04", name: "Zumba for Students", time: "6:00 PM", description: "Fun group workout with music and movement." },
+  { date: "2025-05-26", name: "Nutrition & Smoothie Workshop", time: "1:00 PM", description: "Learn to fuel your body the smart way." },
+  { date: "2025-06-18", name: "Yoga on the Lawn", time: "8:00 AM", description: "Outdoor yoga with certified instructors." },
+  { date: "2025-07-20", name: "HIIT for Teens", time: "10:00 AM", description: "High-Intensity Interval Training class." },
+  { date: "2025-08-11", name: "Back-to-School Wellness Fair", time: "11:00 AM", description: "Mental & physical health resources for students." },
+  { date: "2025-10-08", name: "Fall Fitness Challenge Begins", time: "All Day", description: "Join the 4-week challenge and track your goals." },
+  { date: "2025-12-02", name: "De-Stress Before Finals", time: "3:00 PM", description: "Join us for meditation and calming exercises." }
+];
+
 
   const calendarGrid = document.getElementById("calendarGrid");
   const currentMonthLabel = document.getElementById("currentMonthLabel");
