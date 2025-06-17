@@ -119,6 +119,10 @@
                 <img src="https://cdna.artstation.com/p/assets/images/images/058/366/464/large/troy-bowen-vivint.jpg?1673992661" alt="Sports">
                 <div class="info"><span>Sports</span></div>
             </div>
+            <div class="event-card" onclick="scrollToCategory('fairs')">
+                <img src="" alt="">
+                <div class="info"><span>Fairs</span></div>
+            </div>
             <div class="event-card" onclick="scrollToCategory('tech')">
                 <img src="https://th.bing.com/th/id/OIP.IIZx8mJYWDlEbzvU9AuZIwHaE7?w=232&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Tech">
                 <div class="info"><span>Tech</span></div>
@@ -226,6 +230,29 @@
     <section></section>
 
     <!-- Tech -->
+    <section class="slider-container" id="fairs">
+        <div class="slider-header">
+            <h2 class="section-title">Fairs</h2>
+            <div class="slider-nav">
+                <button onclick="changeSlide('fairs', -1)">&#10094;</button>
+                <span id="fairs-page">1 of 2</span>
+                <button onclick="changeSlide('fairs', 1)">&#10095;</button>
+            </div>
+        </div>
+        <div class="events-slider" id="fairs-slider">
+            <div class="event-card">
+                <img src="" alt="">
+                <div class="info">
+                    <h3>Indoor Circus</h3>
+                    <p>Feb 17 · Media Center</p>
+                    <p class="price">Free – 24hr Event</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section></section>
+
     <section class="slider-container" id="tech">
         <div class="slider-header">
             <h2 class="section-title">Tech</h2>
@@ -270,8 +297,6 @@
             </div>
         </div>
     </section>
-
-    <section></section>
 </div>
 
 <section></section>
@@ -288,7 +313,7 @@
         categories: { index: 0, size: 4 },
         sports: { index: 0, size: 4 },
         tech: { index: 0, size: 4 },
-        comedy: { index: 0, size: 4 },
+        fairs: { index: 0, size: 4 },
     };
 
     // Scroll to a category section
