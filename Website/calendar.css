@@ -395,10 +395,6 @@ footer .footer-links a:hover {
     }
 
     .calendar-navigation {
-        flex-direction: row
-
-        h4{
-         font-family: 'Poppins', sans-serif;
-            color: #ffffff;
-                line-height: 1.6;
-            margin: 0;}
+        flex-direction: row;
+    }
+}
