@@ -111,21 +111,17 @@
             <h2 class="section-title">Categories</h2>
         </div>
         <div class="events-slider" id="categories-slider">
-            <div class="event-card" onclick="scrollToCategory('concerts')">
-                <img src="https://i.imgur.com/AeV7WRz.png" alt="Concerts">
-                <div class="info"><span>Concerts</span></div>
+            <div class="event-card" onclick="scrollToCategory('theatre')">
+                <img src="https://th.bing.com/th/id/OIP.E6AXFY3HOo95TNfpVZ5XmwHaDw?rs=1&pid=ImgDetMain" alt="theatre">
+                <div class="info"><span>Theatre</span></div>
             </div>
             <div class="event-card" onclick="scrollToCategory('sports')">
-                <img src="https://i.imgur.com/kqgkR3k.png" alt="Sports">
+                <img src="https://cdna.artstation.com/p/assets/images/images/058/366/464/large/troy-bowen-vivint.jpg?1673992661" alt="Sports">
                 <div class="info"><span>Sports</span></div>
             </div>
             <div class="event-card" onclick="scrollToCategory('tech')">
-                <img src="https://i.imgur.com/6VHP6Be.png" alt="Tech">
+                <img src="https://th.bing.com/th/id/OIP.IIZx8mJYWDlEbzvU9AuZIwHaE7?w=232&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Tech">
                 <div class="info"><span>Tech</span></div>
-            </div>
-            <div class="event-card" onclick="scrollToCategory('comedy')">
-                <img src="https://i.imgur.com/KPZNRsU.png" alt="Comedy">
-                <div class="info"><span>Comedy</span></div>
             </div>
         </div>
     </section>
@@ -133,25 +129,50 @@
     <section></section>
 
     <!-- Concerts Section -->
-    <section class="slider-container" id="concerts">
+    <section class="slider-container" id="theatre">
         <div class="slider-header">
-            <h2 class="section-title">Concerts</h2>
+            <h2 class="section-title">Theatre</h2>
             <div class="slider-nav">
                 <button onclick="changeSlide('concerts', -1)">&#10094;</button>
                 <span id="concerts-page">1 of 2</span>
                 <button onclick="changeSlide('concerts', 1)">&#10095;</button>
             </div>
         </div>
-        <div class="events-slider" id="concerts-slider">
+        <div class="events-slider" id="theatre-slider">
             <div class="event-card">
-                <img src="https://i.imgur.com/dXQ1kVJ.png" alt="Concert">
+                <img src="https://images.unsplash.com/photo-1619201379964-6b6d5b79b9f6" alt="Clue Play">
                 <div class="info">
-                    <h3>Laufey: A Matter of Time Tour</h3>
-                    <p>Oct 6 · Delta Center</p>
-                    <p class="price">From $83</p>
+                    <h3>Clue: High School Edition</h3>
+                    <p>Nov 12 · Hillcrest Auditorium</p>
+                    <p class="price">Tickets $7</p>
+                </div>
+            </div>
+            <div class="event-card">
+                <img src="https://images.unsplash.com/photo-1601933470928-c36d887c13c8" alt="Musical">
+                <div class="info">
+                    <h3>High School Musical</h3>
+                    <p>Dec 2–4 · Hillcrest Stage</p>
+                    <p class="price">Tickets $10</p>
+                </div>
+            </div>
+            <div class="event-card">
+                <img src="https://images.unsplash.com/photo-1581091870622-3a7c99d5f0fa" alt="Talent Night">
+                <div class="info">
+                    <h3>Drama Club Talent Night</h3>
+                    <p>Jan 10 · Black Box Theater</p>
+                    <p class="price">Free Admission</p>
+                </div>
+            </div>
+            <div class="event-card">
+                <img src="https://images.unsplash.com/photo-1587370560942-ad2a04eabb6d" alt="Our Town">
+                <div class="info">
+                    <h3>Our Town by Thornton Wilder</h3>
+                    <p>Mar 5–6 · Main Stage</p>
+                    <p class="price">Tickets $8</p>
                 </div>
             </div>
         </div>
+
     </section>
 
     <section></section>
@@ -168,11 +189,35 @@
         </div>
         <div class="events-slider" id="sports-slider">
             <div class="event-card">
-                <img src="https://i.imgur.com/dXQ1kVJ.png" alt="Sports">
+                <img src="https://images.unsplash.com/photo-1609331041235-52b07fe2c3e5" alt="Basketball">
                 <div class="info">
-                    <h3>Laufey: A Matter of Time Tour</h3>
-                    <p>Oct 6 · Delta Center</p>
-                    <p class="price">From $83</p>
+                    <h3>Hillcrest vs Riverton – Boys</h3>
+                    <p>Jan 15 · Huskys Legacy Arena</p>
+                    <p class="price">From $5</p>
+                </div>
+            </div>
+            <div class="event-card">
+                <img src="https://images.unsplash.com/photo-1547332182-67e4f039f6f1" alt="Girls Game">
+                <div class="info">
+                    <h3>Hillcrest vs Brighton – Girls</h3>
+                    <p>Jan 22 · Home Game</p>
+                    <p class="price">From $5</p>
+                </div>
+            </div>
+            <div class="event-card">
+                <img src="https://images.unsplash.com/photo-1605733160314-4fc7c7e6fdf4" alt="Senior Night">
+                <div class="info">
+                    <h3>Senior Night: vs Alta</h3>
+                    <p>Feb 9 · Senior Tribute Night</p>
+                    <p class="price">Free for Seniors</p>
+                </div>
+            </div>
+            <div class="event-card">
+                <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79" alt="Volleyball">
+                <div class="info">
+                    <h3>Hillcrest vs Jordan – Volleyball</h3>
+                    <p>Mar 3 · Huskys Arena</p>
+                    <p class="price">From $4</p>
                 </div>
             </div>
         </div>
@@ -192,39 +237,41 @@
         </div>
         <div class="events-slider" id="tech-slider">
             <div class="event-card">
-                <img src="https://i.imgur.com/dXQ1kVJ.png" alt="Tech">
+                <img src="https://images.unsplash.com/photo-1581090700227-1e8b3fd78c45" alt="Hackathon">
                 <div class="info">
-                    <h3>Laufey: A Matter of Time Tour</h3>
-                    <p>Oct 6 · Delta Center</p>
-                    <p class="price">From $83</p>
+                    <h3>Hack the Hill</h3>
+                    <p>Feb 17 · Media Center</p>
+                    <p class="price">Free – 24hr Event</p>
+                </div>
+            </div>
+            <div class="event-card">
+                <img src="https://images.unsplash.com/photo-1611348586757-f0013dbad2be" alt="Robotics">
+                <div class="info">
+                    <h3>Robotics Showcase</h3>
+                    <p>Mar 8 · Tech Hall</p>
+                    <p class="price">Free Entry</p>
+                </div>
+            </div>
+            <div class="event-card">
+                <img src="https://images.unsplash.com/photo-1549921296-3a6b4ed1b270" alt="Cyber Safety">
+                <div class="info">
+                    <h3>Cyber Safety Workshop</h3>
+                    <p>Mar 15 · Room C204</p>
+                    <p class="price">Free Seminar</p>
+                </div>
+            </div>
+            <div class="event-card">
+                <img src="https://images.unsplash.com/photo-1523966211575-eb4a6e9f73c4" alt="Tech Fair">
+                <div class="info">
+                    <h3>Hillcrest Tech Fair</h3>
+                    <p>Apr 2 · Cafeteria</p>
+                    <p class="price">Free Admission</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section></section>
-
-    <!-- Comedy -->
-    <section class="slider-container" id="comedy">
-        <div class="slider-header">
-            <h2 class="section-title">Comedy</h2>
-            <div class="slider-nav">
-                <button onclick="changeSlide('comedy', -1)">&#10094;</button>
-                <span id="comedy-page">1 of 2</span>
-                <button onclick="changeSlide('comedy', 1)">&#10095;</button>
-            </div>
-        </div>
-        <div class="events-slider" id="comedy-slider">
-            <div class="event-card">
-                <img src="https://i.imgur.com/dXQ1kVJ.png" alt="Comedy">
-                <div class="info">
-                    <h3>Laufey: A Matter of Time Tour</h3>
-                    <p>Oct 6 · Delta Center</p>
-                    <p class="price">From $83</p>
-                </div>
-            </div>
-        </div>
-    </section>
 </div>
 
 <section></section>
