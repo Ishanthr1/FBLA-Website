@@ -165,38 +165,15 @@ button:hover {
     </div>
   </div>
   <nav>
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+
     <ul class="nav-links">
       <li><a href="calendar.html">Events Calendar</a></li>
       <li><a href="buy-tickets.html">Box Office</a></li>
       <li><a href="infopage.html">Information</a></li>
       <li><a href="reserve.html">Reservation</a></li>
-      <li><a href="#" onclick="openModal()">Contact</a></li>
     </ul>
   </nav>
 </header>
-
-<!-- Contact Modal -->
-<div id="contactModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <h2>Contact Us</h2>
-    <p>Select a topic:</p>
-    <select>
-      <option value="refund">Refund Ticket</option>
-      <option value="technical">Website Not Working</option>
-      <option value="event-info">Event Information</option>
-      <option value="reservation">Reservation Issues</option>
-      <option value="general">General Inquiry</option>
-    </select>
-    <textarea placeholder="Describe your issue..." rows="4"></textarea>
-    <button id="modalSubmit">Submit</button>
-  </div>
-</div>
 
 <script>
   function openModal() {
@@ -453,7 +430,6 @@ button:hover {
     </form>
   </div>
 </div>
-
 <!-- Footer section -->
 <footer>
   <h4>&copy; 2025 Husky's Legacy Arena. All Rights Reserved.</h4>
@@ -482,6 +458,33 @@ button:hover {
 
   window.addEventListener('scroll', revealOnScroll);
   window.addEventListener('load', revealOnScroll);
+
+  // Get the modal
+  var modal = document.getElementById("bookingModal");
+
+  // Get the button that opens the modal
+  var btn = document.getElementById("openModal");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks the button, open the modal
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
 </script>
 
 </body>

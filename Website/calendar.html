@@ -110,28 +110,9 @@
       <li><a href="buy-tickets.html">Box Office</a></li>
       <li><a href="infopage.html">Information</a></li>
       <li><a href="reserve.html">Reservation</a></li>
-      <li><a href="#" onclick="openModal()">Contact</a></li>
     </ul>
   </nav>
 </header>
-
-<!-- Contact Modal -->
-<div id="contactModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <h2>Contact Us</h2>
-    <p>Select a topic:</p>
-    <select>
-      <option value="refund">Refund Ticket</option>
-      <option value="technical">Website Not Working</option>
-      <option value="event-info">Event Information</option>
-      <option value="reservation">Reservation Issues</option>
-      <option value="general">General Inquiry</option>
-    </select>
-    <textarea placeholder="Describe your issue..." rows="4"></textarea>
-    <button id="modalSubmit">Submit</button>
-  </div>
-</div>
 
 <script>
   function openModal() {
