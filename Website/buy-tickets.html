@@ -135,7 +135,7 @@
 
     <section class="slider-container" id="theatre">
         <div class="slider-header">
-            <h2 class="section-title">🎭 Theatre</h2>
+            <h2 class="section-title">Theatre</h2>
             <div class="slider-nav">
                 <button onclick="changeSlide('theatre', -1)">&#10094;</button>
                 <span id="theatre-page">1 of 2</span>
@@ -230,7 +230,7 @@
     <!-- Sports -->
     <section class="slider-container" id="sports">
         <div class="slider-header">
-            <h2 class="section-title">🏀 Sports</h2>
+            <h2 class="section-title">Sports</h2>
             <div class="slider-nav">
                 <button onclick="changeSlide('sports', -1)">&#10094;</button>
                 <span id="sports-page">1 of 2</span>
@@ -324,7 +324,7 @@
 
     <section class="slider-container" id="well">
         <div class="slider-header">
-            <h2 class="section-title">💪 Wellness & Fitness</h2>
+            <h2 class="section-title">Wellness & Fitness</h2>
             <div class="slider-nav">
                 <button onclick="changeSlide('well', -1)">&#10094;</button>
                 <span id="wellness-page">1 of 2</span>
@@ -419,7 +419,7 @@
 
     <section class="slider-container" id="tech">
         <div class="slider-header">
-            <h2 class="section-title">💻 Tech</h2>
+            <h2 class="section-title">Tech</h2>
             <div class="slider-nav">
                 <button onclick="changeSlide('tech', -1)">&#10094;</button>
                 <span id="tech-page">1 of 2</span>
@@ -525,7 +525,7 @@
         categories: { index: 0, size: 4 },
         sports: { index: 0, size: 4 },
         tech: { index: 0, size: 4 },
-        fairs: { index: 0, size: 4 },
+        well: { index: 0, size: 4 },
     };
 
     // Scroll to a category section
@@ -556,7 +556,7 @@
         if (!slider || !sliderData) return;
 
         const cards = slider.querySelectorAll('.event-card');
-        const visibleCount = Math.floor(slider.offsetWidth / 260); // Adjust for card width
+        const visibleCount = Math.floor(slider.offsetWidth / 250); // Adjust for card width
         const maxIndex = Math.ceil(cards.length / visibleCount) - 1;
 
         sliderData.index = Math.max(0, Math.min(sliderData.index + direction, maxIndex));
