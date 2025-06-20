@@ -521,7 +521,7 @@
     // Slider state
     const sliders = {
         featured: { index: 0, size: 4 },
-        concerts: { index: 0, size: 4 },
+        theatre: { index: 0, size: 4 },
         categories: { index: 0, size: 4 },
         sports: { index: 0, size: 4 },
         tech: { index: 0, size: 4 },
@@ -598,12 +598,11 @@
         dropdownMenu.innerHTML = ''; // Clear previous
 
         if (query.length === 0) {
-            // Show static category list
             dropdownMenu.innerHTML = `
-        <li onclick="scrollToCategory('concerts')">Concerts</li>
+        <li onclick="scrollToCategory('theatre')">Concerts</li>
         <li onclick="scrollToCategory('sports')">Sports</li>
         <li onclick="scrollToCategory('tech')">Tech</li>
-        <li onclick="scrollToCategory('comedy')">Comedy</li>
+        <li onclick="scrollToCategory('well')">Wellness and Fitness</li>
       `;
             return;
         }
