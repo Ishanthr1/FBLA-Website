@@ -77,7 +77,6 @@
       color: #2e7d32;
     }
 
-
     .purchase-btn {
       background: #2E7D32; /* Updated green color */
       font-family: 'Poppins', sans-serif;
@@ -148,12 +147,10 @@
     </div>
 
     <h3 style="margin-top: 2rem;">Merchandise</h3>
-    <div class="amenities" id="merch-options">
-      <div class="amenity" onclick="toggleSelection(this)">T-Shirt - $30</div>
-      <div class="amenity" onclick="toggleSelection(this)">Cap - $20</div>
-      <div class="amenity" onclick="toggleSelection(this)">Poster - $15</div>
-      <div class="amenity" onclick="toggleSelection(this)">VIP Lanyard - $10</div>
-    </div>
+    <div class="amenity" onclick="toggleSelection(this)">T-Shirt - $30</div>
+    <div class="amenity" onclick="toggleSelection(this)">Cap - $20</div>
+    <div class="amenity" onclick="toggleSelection(this)">Poster - $15</div>
+    <div class="amenity" onclick="toggleSelection(this)">VIP Lanyard - $10</div>
   </div>
   <script>
     function toggleSelection(elem) {
@@ -171,30 +168,31 @@
   const date = decodeURIComponent(params.get('date') || 'TBD');
   const venue = decodeURIComponent(params.get('venue') || 'Venue TBD');
   const price = decodeURIComponent(params.get('price') || '0');
+  const eventId = decodeURIComponent(params.get('eventId') || 'c605196b-0cea-4b7a-a5f9-1700818486c8'); // Default eventId
 
   // Set page content dynamically
   document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('event-title').textContent = title;
     document.getElementById('event-details').textContent = `${date} · ${venue}`;
     document.getElementById('event-price').textContent = `From $${price}`;
+
+    // Seats.io chart rendering
+    new seatsio.SeatingChart({
+      divId: 'chart',
+      workspaceKey: '8bf65fda-803c-4a0d-988d-bb198c3b4440',
+      event: eventId, // Use the dynamically passed eventId
+      session: 'continue',
+      pricing: [
+        { category: 1, price: 70 },
+        { category: 2, price: 50 },
+        { category: 3, price: 90 }
+      ],
+      priceFormatter: price => '$' + price
+    }).render();
   });
 </script>
 
 <script>
-  // Seats.io chart rendering
-  new seatsio.SeatingChart({
-    divId: 'chart',
-    workspaceKey: '8bf65fda-803c-4a0d-988d-bb198c3b4440',
-    event: 'c605196b-0cea-4b7a-a5f9-1700818486c8',
-    session: 'continue',
-    pricing: [
-      { category: 1, price: 70 },
-      { category: 2, price: 50 },
-      { category: 3, price: 90 }
-    ],
-    priceFormatter: price => '$' + price
-  }).render();
-
   function purchaseTicket() {
     window.open("https://buy.stripe.com/test_00g3cU1vT0d7bAI3cc", "_blank");
   }
