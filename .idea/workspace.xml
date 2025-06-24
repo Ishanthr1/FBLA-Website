@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dbac4f8b-286d-4b2e-a111-97cd0c683137" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/purchase.html" beforeDir="false" afterPath="$PROJECT_DIR$/Website/purchase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/buy-tickets.html" beforeDir="false" afterPath="$PROJECT_DIR$/Website/buy-tickets.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +109,7 @@
       <workItem from="1750294262895" duration="3093000" />
       <workItem from="1750305234244" duration="651000" />
       <workItem from="1750356616820" duration="1984000" />
-      <workItem from="1750800827716" duration="628000" />
+      <workItem from="1750800827716" duration="2356000" />
     </task>
     <servers />
   </component>
