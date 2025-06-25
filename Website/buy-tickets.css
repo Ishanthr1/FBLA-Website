@@ -237,6 +237,11 @@ nav {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
+.search-wrapper input:focus {
+    outline: 2px solid #2e7d32; /* Green outline on focus */
+    outline-offset: 2px; /* Adds a small gap between the input and the outline */
+}
+
 .search-icon {
     position: absolute;
     top: 50%;
