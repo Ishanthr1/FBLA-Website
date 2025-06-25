@@ -4,212 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hillcrest High Gym - Home</title>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="home.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0128/7015.js" async="async" ></script>
-  <style>
-
-    footer {
-        background: url("https://i.imgur.com/yjuCGaV.png") no-repeat center center;
-        background-size: 1000%;
-        color: #fff;
-        text-align: center;
-        padding: 20px 0;
-        width: 100%;
-        margin-top: auto;
-        position: relative;
-    }
-
-    footer::before {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 5px;  /* Adjust thickness */
-        background-color: #28a745;  /* Green color */
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-
-            .footer-content {
-                max-width: 600px;
-                margin: 0 auto;
-                padding: 20px;
-            }
-
-            .footer-content h2 {
-                margin-bottom: 10px;
-                font-size: 24px;
-            }
-
-            .footer-content p {
-                margin-bottom: 20px;
-                font-size: 16px;
-            }
-
-            .newsletter-form {
-                display: flex;
-                justify-content: center;
-                gap: 10px;
-            }
-
-            .newsletter-form input {
-                padding: 10px;
-                font-size: 16px;
-                border: none;
-                border-radius: 5px;
-                width: 70%;
-            }
-
-            .newsletter-form button {
-                padding: 10px 20px;
-                font-size: 16px;
-                border: none;
-                border-radius: 5px;
-                background-color: #28a745;
-                color: #fff;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                gap: 8px;
-            }
-
-            .newsletter-form button:hover {
-                background-color: #218838;
-            }
-
-            .footer-bottom {
-                margin-top: 20px;
-                padding-top: 10px;
-                border-top: 1px solid #444;
-                font-size: 14px;
-            }
-
-            .icon-green {
-                color: #2E7D32;
-                margin-right: 10px;
-            }
-
-            .social-icons {
-                margin-top: 20px;
-                display: flex;
-                justify-content: center;
-                gap: 15px;
-            }
-
-            .social-icon {
-                color: #fff;
-                font-size: 20px;
-                transition: color 0.3s ease;
-            }
-
-            .social-icon:hover {
-                color: #28a745;
-            }
-
-  /* Import Poppins font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-/* Modal styling */
-.modal {
-  display: none; /* Keep only this */
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  justify-content: center;
-  align-items: center;
-}
-
-
-/* Modal content */
-.modal-content {
-  background: #2E7D32; /* Husky Green */
-  padding: 30px;
-  width: 500px; /* Increased size */
-  border-radius: 12px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
-  position: relative;
-  text-align: center;
-  color: white;
-}
-
-/* Close button */
-.close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 24px;
-  cursor: pointer;
-  color: white;
-}
-
-/* Only apply width 100% to modal form elements */
-.modal-content select,
-.modal-content textarea,
-.modal-content button {
-  width: 100%;
-  margin-top: 15px;
-  padding: 12px;
-  border-radius: 6px;
-  border: 1px solid #fff;
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-}
-
-/* Keep footer button normal */
-.newsletter-form button {
-  width: auto; /* Ensures it keeps its natural size */
-}
-
-
-/* Button */
-.modal-content button {
-  background: #FFF;
-  color: #2E7D32;
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
-  transition: background 0.3s ease;
-}
-
-.modal-content button:hover {
-  background: #E0E0E0;
-}
-
-    .popup-notification {
-      position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #28a745;
-      color: white;
-      padding: 15px 25px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      font-size: 16px;
-      display: none;
-      align-items: center;
-      gap: 10px;
-      z-index: 9999;
-      animation: fadeInOut 3s ease-in-out;
-    }
-
-    @keyframes fadeInOut {
-      0% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
-      10% { opacity: 1; transform: translateX(-50%) translateY(0); }
-      90% { opacity: 1; transform: translateX(-50%) translateY(0); }
-      100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
-    }
-
-  </style>
 </head>
 <body>
+
 <header>
   <div class="top-bar">
     <div class="left">
@@ -240,66 +41,187 @@
   </nav>
 </header>
 
-
-<script>
-  function openModal() {
-    document.getElementById("contactModal").style.display = "flex"; // Show the modal
-  }
-
-  function closeModal() {
-    document.getElementById("contactModal").style.display = "none"; // Hide the modal
-  }
-
-  // Ensure modal is hidden when the page loads
-  document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("contactModal").style.display = "none";
-
-    // Add event listener to the submit button
-    document.getElementById("modalSubmit").addEventListener("click", function(event) {
-      event.preventDefault(); // Prevents form submission (remove this if using a real form)
-      closeModal(); // Close modal after clicking submit
-    });
-  });
-</script>
-
-
 <section class="hero">
   <div class="hero-content">
-    <h2 class="glow-text">Welcome to Husky's Legacy Arena</h2>
-    <p class="glow-text">Where Every Event Makes Memories!</p>
+    <h2 id="hero-title" class="glow-text"></h2>
+    <p id="hero-subtitle" class="glow-text"></p>
     <a href="buy-tickets.html" class="cta-button">Get Tickets Now</a>
   </div>
 </section>
 
-<script>
-  function toggleMenu() {
-    document.querySelector('.nav-links').classList.toggle('show');
-  }
-</script>
+<main>
+  <div class="section-divider"></div>
+  <section class="content-section fade-in-up">
+    <div class="section-container">
+      <h2 class="section-title fade-in-up">What We Do</h2>
+      <p class="section-subtitle fade-in-up">We are the heart of the community…</p>
+
+      <div class="marquee-wrapper">
+        <div class="features-grid marquee-track">
+          <div class="feature-item">
+            <i class="fas fa-basketball-ball"></i>
+            <h3>Sporting Events</h3>
+            <p>From championship basketball games to wrestling tournaments, we host the most exciting athletic events in the region.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-music"></i>
+            <h3>Concerts & Shows</h3>
+            <p>Experience unforgettable performances from world-renowned artists and local talents in our acoustically optimized arena.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-handshake"></i>
+            <h3>Community Gatherings</h3>
+            <p>We provide a versatile space for trade shows, graduation ceremonies, and community-focused events of all sizes.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-paint-brush"></i>
+            <h3>Art & Exhibitions</h3>
+            <p>Discover a vibrant array of art installations, cultural exhibitions, and creative showcases throughout the year.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-microphone-alt"></i>
+            <h3>Conferences & Seminars</h3>
+            <p>Our adaptable spaces are perfect for hosting large-scale conferences, corporate meetings, and educational seminars.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-utensils"></i>
+            <h3>Culinary Festivals</h3>
+            <p>Indulge in diverse flavors at our food and beverage festivals, featuring local chefs and international cuisines.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-basketball-ball"></i>
+            <h3>Sporting Events</h3>
+            <p>From championship basketball games to wrestling tournaments, we host the most exciting athletic events in the region.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-music"></i>
+            <h3>Concerts & Shows</h3>
+            <p>Experience unforgettable performances from world-renowned artists and local talents in our acoustically optimized arena.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-handshake"></i>
+            <h3>Community Gatherings</h3>
+            <p>We provide a versatile space for trade shows, graduation ceremonies, and community-focused events of all sizes.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-paint-brush"></i>
+            <h3>Art & Exhibitions</h3>
+            <p>Discover a vibrant array of art installations, cultural exhibitions, and creative showcases throughout the year.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-microphone-alt"></i>
+            <h3>Conferences & Seminars</h3>
+            <p>Our adaptable spaces are perfect for hosting large-scale conferences, corporate meetings, and educational seminars.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-utensils"></i>
+            <h3>Culinary Festivals</h3>
+            <p>Indulge in diverse flavors at our food and beverage festivals, featuring local chefs and international cuisines.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="section-divider"></div>
+  <section class="content-section fade-in-up bg-dark">
+    <div class="section-container">
+      <h2 class="section-title fade-in-up">Featured Event</h2>
+      <div class="featured-event-layout">
+        <div class="image-hover-container" id="purchasing-system-image-container">
+          <img src="data:image/jpeg;base64,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" class="featured-image" id="purchasing-system-image">
+        </div>
+        <div class="section-subtitle fade-in-up">
+          <h3>Boys Basketball State Championship</h3>
+          <p>Feel the roar of the crowd as the Hillcrest Huskies battle for the title in the most anticipated game of the season. An event filled with breathtaking plays, intense rivalry, and community spirit.</p>
+          <a href="buy-tickets.html" class="cta-button-small">Buy Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+  <section class="content-section fade-in-up">
+    <div class="section-container">
+      <h2 class="section-title fade-in-up">Why Choose Us?</h2>
+      <p class="section-subtitle fade-in-up">Our commitment to excellence ensures every event is a memorable success.</p>
+      <div class="choice-grid">
+        <div class="choice-item">
+          <i class="fas fa-map-marker-alt icon-green"></i>
+          <h4>Prime Location</h4>
+          <p>Conveniently located with ample parking and easy access.</p>
+        </div>
+        <div class="choice-item">
+          <i class="fas fa-couch icon-green"></i>
+          <h4>Modern Facilities</h4>
+          <p>Enjoy comfortable seating with perfect sightlines from every angle.</p>
+        </div>
+        <div class="choice-item">
+          <i class="fas fa-users icon-green"></i>
+          <h4>Professional Staff</h4>
+          <p>Our experienced team is dedicated to providing top-tier service.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+  <section class="content-section fade-in-up bg-dark">
+    <div class="section-container">
+      <h2 class="section-title fade-in-up">What Our Visitors Say</h2>
+
+      <div class="marquee-wrapper">
+        <div class="marquee-track testimonials-track">
+          <!-- the two original .testimonial-card elements -->
+          <div class="testimonial-card">
+            <p>"An absolutely incredible venue! The energy during the playoffs was electric. I can't wait to come back for another game."</p>
+            <cite>- Alex Johnson, Season Ticket Holder</cite>
+          </div>
+          <div class="testimonial-card">
+            <p>"We hosted our corporate event at the arena, and the staff was phenomenal. They handled everything with professionalism and care."</p>
+            <cite>- Samantha Lee, Event Coordinator</cite>
+          </div>
+          <div class="testimonial-card">
+            <p>"Everything from the sound system to the seating was top-notch. It’s the perfect place for both big concerts and local events."</p>
+            <cite>- Jordan Kim, Concert Attendee</cite>
+          </div>
+          <div class="testimonial-card">
+            <p>"Our graduation ceremony was flawless thanks to the arena's setup and staff. It truly made the day unforgettable for our students."</p>
+            <cite>- Melissa Grant, School Administrator</cite>
+          </div>
+
+
+          <!-- duplicate them once for seamless scroll -->
+          <div class="testimonial-card" aria-hidden="true">
+            <p>"An absolutely incredible venue! The energy during the playoffs was electric. I can't wait to come back for another game."</p>
+            <cite>- Alex Johnson, Season Ticket Holder</cite>
+          </div>
+          <div class="testimonial-card" aria-hidden="true">
+            <p>"We hosted our corporate event at the arena, and the staff was phenomenal. They handled everything with professionalism and care."</p>
+            <cite>- Samantha Lee, Event Coordinator</cite>
+          </div>
+          <div class="testimonial-card" aria-hidden="true">
+            <p>"Everything from the sound system to the seating was top-notch. It’s the perfect place for both big concerts and local events."</p>
+            <cite>- Jordan Kim, Concert Attendee</cite>
+          </div>
+          <div class="testimonial-card" aria-hidden="true">
+            <p>"Our graduation ceremony was flawless thanks to the arena's setup and staff. It truly made the day unforgettable for our students."</p>
+            <cite>- Melissa Grant, School Administrator</cite>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</main>
 
 <div id="subscriptionSuccess" class="popup-notification">
   <i class="fas fa-check-circle"></i> You’ve successfully subscribed!
 </div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Newsletter form success popup
-    const form = document.querySelector(".newsletter-form");
-    const popup = document.getElementById("subscriptionSuccess");
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault(); // Prevent form from submitting and reloading
-      popup.style.display = "flex"; // Show popup
-
-      setTimeout(() => {
-        popup.style.display = "none";
-      }, 3000);
-
-      form.reset(); // Optional: reset the form fields
-    });
-  });
-</script>
-
 
 <footer>
   <div class="footer-content">
@@ -320,8 +242,192 @@
     <h4>&copy; 2025 Husky's Legacy Arena. All rights reserved.</h4>
   </div>
 </footer>
+
 <script>
+  function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('active');
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    // Newsletter form success popup
+    const form = document.querySelector(".newsletter-form");
+    const popup = document.getElementById("subscriptionSuccess");
+
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent form from submitting
+        if (popup) {
+          popup.style.display = "flex";
+          setTimeout(() => {
+            popup.style.display = "none";
+          }, 3000);
+        }
+        form.reset();
+      });
+    }
+
+    // --- TYPEWRITER ANIMATION SCRIPT ---
+    const heroTitleEl = document.getElementById('hero-title');
+    const heroSubtitleEl = document.getElementById('hero-subtitle');
+
+    const titleText = "Welcome to Husky's Legacy Arena";
+    const subtitleText = "Where Every Event Makes Memories!";
+    const typeSpeed = 50; // Milliseconds per character
+    const subtitleDelay = 500; // Delay before subtitle starts typing
+
+    // Clear initial text
+    heroTitleEl.innerHTML = '';
+    heroSubtitleEl.innerHTML = '';
+
+    // Add cursor to title initially for immediate visibility
+    heroTitleEl.innerHTML = '<span class="cursor"></span>';
+
+    function typewriter(element, text, callback) {
+      let i = 0;
+      element.innerHTML = ''; // Clear element before typing
+      const cursorSpan = '<span class="cursor"></span>';
+
+      function type() {
+        if (i < text.length) {
+          element.innerHTML = text.substring(0, i + 1) + cursorSpan;
+          i++;
+          setTimeout(type, typeSpeed);
+        } else {
+          // Remove cursor blinking from the current element once typing is complete
+          element.innerHTML = text;
+          if (callback) callback();
+        }
+      }
+      type();
+    }
+
+    // Start typing title, then subtitle
+    typewriter(heroTitleEl, titleText, () => {
+      setTimeout(() => {
+        typewriter(heroSubtitleEl, subtitleText);
+      }, subtitleDelay);
+    });
+
+    // --- NEW: IMAGE FLOW ANIMATION (for purchasing system image) ---
+    const imgContainer = document.getElementById('purchasing-system-image-container');
+    const targetImage = document.getElementById('purchasing-system-image');
+
+    if (imgContainer && targetImage) {
+      const sensitivity = 20; // How much the image tilts (degrees)
+      const depth = 30; // How much the image moves forward/backward (pixels)
+
+      imgContainer.addEventListener('mousemove', (e) => {
+        const { left, top, width, height } = imgContainer.getBoundingClientRect();
+        const x = e.clientX - left; // X position within the element.
+        const y = e.clientY - top;  // Y position within the element.
+
+        // Normalize x and y to a range of -0.5 to 0.5
+        const normalizeX = (x / width) - 0.5;
+        const normalizeY = (y / height) - 0.5;
+
+        // Calculate rotation and translation based on normalized position
+        const rotateX = -normalizeY * sensitivity; // Invert Y for natural tilt
+        const rotateY = normalizeX * sensitivity;
+        const translateX = normalizeX * depth;
+        const translateY = normalizeY * depth;
+
+        targetImage.style.transform = `scale(1.05) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(${depth}px) translateX(${translateX}px) translateY(${translateY}px)`;
+        targetImage.style.transition = 'transform 0.1s ease-out'; // Quick transition for smoothness
+      });
+
+      imgContainer.addEventListener('mouseleave', () => {
+        targetImage.style.transform = `scale(1) rotateX(0deg) rotateY(0deg) translateZ(0px) translateX(0px) translateY(0px)`;
+        targetImage.style.transition = 'transform 0.4s ease-out'; // Slower transition back
+      });
+    }
+
+    // --- NEW: HORIZONTAL SCROLL ANIMATION (Parallax for sections) ---
+    const featuresGrid = document.querySelector('.features-grid');
+    const choiceGrid = document.querySelector('.choice-grid');
+
+    const setupHorizontalParallax = (gridElement) => {
+      if (!gridElement) return;
+
+      const parentSection = gridElement.closest('.content-section');
+      if (!parentSection) return;
+
+      const parallaxSpeed = 0.2; // Adjust this value to control scroll speed
+
+      // Set initial transform
+      gridElement.style.transform = `translateX(0px)`;
+      gridElement.style.willChange = 'transform'; // Optimize for animation
+
+      const handleScroll = () => {
+        const sectionRect = parentSection.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+
+        // Calculate visibility percentage: 0 when fully out of view below, 1 when fully out of view above
+        // Clamping between -1 and 2 to give some buffer
+        let scrollProgress = (viewportHeight - sectionRect.top) / (viewportHeight + sectionRect.height);
+        scrollProgress = Math.max(-0.5, Math.min(1.5, scrollProgress)); // Clamp for a range of visibility
+
+        // Adjust the multiplier based on the desired scroll range
+        // For 'average readable speed', this will be a fraction of the total width
+        const maxScroll = (gridElement.scrollWidth - gridElement.clientWidth);
+
+        // Ensure maxScroll is not negative if content is smaller than container
+        const effectiveMaxScroll = Math.max(0, maxScroll);
+
+        const parallaxAmount = effectiveMaxScroll * (scrollProgress - 0.5) * parallaxSpeed; // Center scroll at 0.5 visibility
+
+        gridElement.style.transform = `translateX(${-parallaxAmount}px)`;
+      };
+
+      // Initial call to set position correctly on load
+      handleScroll();
+      window.addEventListener('scroll', handleScroll);
+      window.addEventListener('resize', handleScroll); // Recalculate on resize
+    };
+
+    // Apply parallax only if screen is wide enough
+    if (window.innerWidth > 992) { // Match CSS media query breakpoint
+      setupHorizontalParallax(featuresGrid);
+      setupHorizontalParallax(choiceGrid);
+    } else {
+      // Ensure no lingering transforms if resized from large to small
+      if (featuresGrid) featuresGrid.style.transform = 'translateX(0)';
+      if (choiceGrid) choiceGrid.style.transform = 'translateX(0)';
+    }
+
+    // Re-evaluate parallax on resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 992) {
+        setupHorizontalParallax(featuresGrid);
+        setupHorizontalParallax(choiceGrid);
+      } else {
+        if (featuresGrid) featuresGrid.style.transform = 'translateX(0)';
+        if (choiceGrid) choiceGrid.style.transform = 'translateX(0)';
+      }
+    });
+
+  });
+
+  // Chatbase script
   (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="b58IOkitAUZ4h2CuPN8Dx";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+
+  /* ─── 1.  Clone marquee content once so the loop is seamless ─── */
+  document.querySelectorAll('.marquee-track').forEach(track=>{
+    track.innerHTML += track.innerHTML;   // duplicate children once
+  });
+
+  /* ─── 2.  IntersectionObserver for fade-in-up elements ───────── */
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target); // animate once
+      }
+    });
+  },{threshold:0.15});
+
+  document.querySelectorAll('.fade-in-up').forEach(el=>observer.observe(el));
+
 </script>
+
 </body>
 </html>
