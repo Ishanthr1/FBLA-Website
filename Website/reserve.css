@@ -118,6 +118,27 @@ nav {
     background-color: white;
 }
 
+/* CSS for Spacing - ADDED HERE */
+.info-section ul li:nth-child(5) { /* Targets "Private Events" list item specifically */
+    margin-bottom: 15px; /* Space above Private Events */
+}
+
+.info-section p:nth-of-type(4) { /* Targets the 4th <p> tag within the first .info-section */
+    margin-top: 15px; /* Adjust as desired for spacing */
+}
+
+.info-section h3:nth-of-type(2) { /* Targets "Rental Costs" (2nd h3 in the 2nd info-section) */
+    margin-top: 30px; /* Space above Rental Costs */
+}
+
+.info-section h3:nth-of-type(3) { /* Targets "Booking Process" (3rd h3 in the 2nd info-section) */
+    margin-top: 30px; /* Space above Booking Process */
+}
+
+#openModal { /* Targets the "Book Now" button by its ID */
+    margin-top: 30px; /* Space below the Book Now button */
+}
+
 @media screen and (max-width: 768px) {
     .nav-links {
         position: absolute;
